@@ -1092,6 +1092,7 @@ public class Player : MonoBehaviour
                 break;
         }
 
+        //Exit state 
         switch (prevState)
         {
             case PlayerState.Idle:

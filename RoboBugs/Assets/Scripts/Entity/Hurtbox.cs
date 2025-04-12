@@ -36,10 +36,22 @@ public class Hurtbox : MonoBehaviour
         this.width = width;
         this.height = height;
 
-        gameObject.transform.position = new Vector3(
-            owner.transform.position.x + (xoffset + (width / 2)) * 2 * (owner.GetComponent<Player>().facingRight ? 1 : -1),
-            owner.transform.position.y + (yoffset - (height / 2)) * 2-2,
-            0);
+        if(owner.GetComponent<BugMovement>() != null)
+        {
+            gameObject.transform.position = new Vector3(
+                owner.transform.position.x + (xoffset + (width / 2)) * 2 * (owner.GetComponent<SpriteRenderer>().flipX ? 1 : -1),
+                owner.transform.position.y + (yoffset - (height / 2)) * 2 - 2,
+                0);
+        }
+        else if (owner.GetComponent<Player>() != null)
+        {
+            gameObject.transform.position = new Vector3(
+                owner.transform.position.x + (xoffset + (width / 2)) * 2 * (owner.GetComponent<Player>().facingRight ? 1 : -1),
+                owner.transform.position.y + (yoffset - (height / 2)) * 2 - 2,
+                0);
+        }
+
+        gameObject.transform.rotation = Quaternion.identity;
 
         gameObject.transform.localScale = new Vector3(width * 2, height * 2, 1);
     }
@@ -47,7 +59,7 @@ public class Hurtbox : MonoBehaviour
 
     //when the hurtbox detects a collision with a hitbox, it will deal damage to the hitbox's owner given specific conditions
     public void OnTriggerEnter2D(Collider2D collision)
-    {
+        {
         if(collision.gameObject.GetComponent<Hitbox>() == null)
         {
             return;
@@ -56,38 +68,81 @@ public class Hurtbox : MonoBehaviour
         Player hitPlayer = hitHitbox.owner.GetComponent<Player>();
         if (hitHitbox != null && hitHitbox.owner != this.owner && (!hitHitbox.ignorePlayers.Contains(owner)) && hitPlayer != null)
         {
-            var hurtPlayer = owner.GetComponent<Player>();
-            if (hurtPlayer == null)
+            //if owner has a BugMovement component,... 
+            if (owner.GetComponent<BugMovement>() != null)
             {
-                // the hurtbox is not tied to a player
-                Debug.Log($"hitbox hit object for {hitHitbox.damage} damage");
-                OnHurt?.Invoke(hitHitbox.damage);
-                return;
+                BugMovement hurtBug = owner.GetComponent<BugMovement>();
+                if (hurtBug == null)
+                {
+                    // the hurtbox is not tied to a player
+                    Debug.Log($"hitbox hit object for {hitHitbox.damage} damage");
+                    OnHurt?.Invoke(hitHitbox.damage);
+                    return;
+                }
+                //Debug.Log("Hurtbox hit: " + owner.GetInstanceID());
+                //if (!hurtBug.isAlive || !hitPlayer.isAlive || (hurtBug.invincibilityCounter > 0))
+                //{
+                //    return;
+                //}
+
+                //Tell bug to enter the stunned state
+                hurtBug.EnterStunnedState();
+
+                //generate the location of the hit or block spark
+                BoxCollider2D hurtboxCollider = gameObject.GetComponent<BoxCollider2D>();
+                BoxCollider2D hitboxCollider = collision.gameObject.GetComponent<BoxCollider2D>();
+
+                Vector2 overlapCenter = GetOverlapCenter(hurtboxCollider, hitboxCollider);
+                //if (overlapCenter != Vector2.zero)
+                //{
+                //    Debug.Log("Overlap Center: " + overlapCenter);
+                //}
+                //make the damaged player actually take damage
+                hitHitbox.ignorePlayers.Add(owner);
+                hitHitbox.canCancel = true;
+                //hurtPlayer.TakeDamage(hitHitbox.owner, hitHitbox.damage, hitHitbox.xKnockback * (hitPlayer.facingRight ? 1 : -1), hitHitbox.yKnockback, hitHitbox.hitstun, overlapCenter, hitHitbox.owner.GetComponent<SpriteRenderer>().material.GetTexture("_PaletteTex"));
+                //hurtPlayer.hitstopVal = 10;
+                //hurtPlayer.animator.enabled = false;
+                //hitHitbox.hitstopVal = 10;
+                //hitHitbox.animator.enabled = false;
+                //GameManager.Instance.gameObject.GetComponent<CameraShake>().Shake(GameManager.Instance.screenShakeIntensity, (1f / 6f)); //shake the camera when hit
             }
-            //Debug.Log("Hurtbox hit: " + owner.GetInstanceID());
-            if(!hurtPlayer.isAlive || !hitPlayer.isAlive || (hurtPlayer.invincibilityCounter > 0))
+            //else if owner has a Player component,...
+            else if (owner.GetComponent<Player>() != null)
             {
-                return;
+                var hurtPlayer = owner.GetComponent<Player>();
+                if (hurtPlayer == null)
+                {
+                    // the hurtbox is not tied to a player
+                    Debug.Log($"hitbox hit object for {hitHitbox.damage} damage");
+                    OnHurt?.Invoke(hitHitbox.damage);
+                    return;
+                }
+                //Debug.Log("Hurtbox hit: " + owner.GetInstanceID());
+                if (!hurtPlayer.isAlive || !hitPlayer.isAlive || (hurtPlayer.invincibilityCounter > 0))
+                {
+                    return;
+                }
+
+                //generate the location of the hit or block spark
+                BoxCollider2D hurtboxCollider = gameObject.GetComponent<BoxCollider2D>();
+                BoxCollider2D hitboxCollider = collision.gameObject.GetComponent<BoxCollider2D>();
+
+                Vector2 overlapCenter = GetOverlapCenter(hurtboxCollider, hitboxCollider);
+                //if (overlapCenter != Vector2.zero)
+                //{
+                //    Debug.Log("Overlap Center: " + overlapCenter);
+                //}
+                //make the damaged player actually take damage
+                hitHitbox.ignorePlayers.Add(owner);
+                hitHitbox.canCancel = true;
+                //hurtPlayer.TakeDamage(hitHitbox.owner, hitHitbox.damage, hitHitbox.xKnockback * (hitPlayer.facingRight ? 1 : -1), hitHitbox.yKnockback, hitHitbox.hitstun, overlapCenter, hitHitbox.owner.GetComponent<SpriteRenderer>().material.GetTexture("_PaletteTex"));
+                hurtPlayer.hitstopVal = 10;
+                hurtPlayer.animator.enabled = false;
+                hitPlayer.hitstopVal = 10;
+                hitPlayer.animator.enabled = false;
+                GameManager.Instance.gameObject.GetComponent<CameraShake>().Shake(GameManager.Instance.screenShakeIntensity, (1f / 6f)); //shake the camera when hit
             }
-
-            //generate the location of the hit or block spark
-            BoxCollider2D hurtboxCollider = gameObject.GetComponent<BoxCollider2D>();
-            BoxCollider2D hitboxCollider = collision.gameObject.GetComponent<BoxCollider2D>();
-
-            Vector2 overlapCenter = GetOverlapCenter(hurtboxCollider, hitboxCollider);
-            //if (overlapCenter != Vector2.zero)
-            //{
-            //    Debug.Log("Overlap Center: " + overlapCenter);
-            //}
-            //make the damaged player actually take damage
-            hitHitbox.ignorePlayers.Add(owner);
-            hitHitbox.canCancel = true;
-            //hurtPlayer.TakeDamage(hitHitbox.owner, hitHitbox.damage, hitHitbox.xKnockback * (hitPlayer.facingRight ? 1 : -1), hitHitbox.yKnockback, hitHitbox.hitstun, overlapCenter, hitHitbox.owner.GetComponent<SpriteRenderer>().material.GetTexture("_PaletteTex"));
-            hurtPlayer.hitstopVal = 10;
-            hurtPlayer.animator.enabled = false;
-            hitPlayer.hitstopVal = 10;
-            hitPlayer.animator.enabled = false;
-            GameManager.Instance.gameObject.GetComponent<CameraShake>().Shake(GameManager.Instance.screenShakeIntensity, (1f/6f)); //shake the camera when hit
         }
     }
 
