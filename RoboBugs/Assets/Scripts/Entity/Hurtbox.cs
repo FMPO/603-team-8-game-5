@@ -59,7 +59,7 @@ public class Hurtbox : MonoBehaviour
 
     //when the hurtbox detects a collision with a hitbox, it will deal damage to the hitbox's owner given specific conditions
     public void OnTriggerEnter2D(Collider2D collision)
-        {
+    {
         if(collision.gameObject.GetComponent<Hitbox>() == null)
         {
             return;
@@ -87,6 +87,9 @@ public class Hurtbox : MonoBehaviour
 
                 //Tell bug to enter the stunned state
                 hurtBug.EnterStunnedState();
+
+                //apply a force to the bug
+                hurtBug.rb.AddForce((hurtBug.gameObject.transform.position - GameObject.FindGameObjectWithTag("Player").transform.Find("Player Feet").position).normalized * hurtBug.damagedForce, ForceMode2D.Impulse);
 
                 //generate the location of the hit or block spark
                 BoxCollider2D hurtboxCollider = gameObject.GetComponent<BoxCollider2D>();
