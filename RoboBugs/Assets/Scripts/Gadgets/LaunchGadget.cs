@@ -29,13 +29,14 @@ public class LaunchGadget : MonoBehaviour
     public void Fire(InputAction.CallbackContext context)
     {
         //If this is when the context has started, it proceeds.
-        if (context.phase.ToString() == "Started")
+        if (context.phase.ToString() == "Started" && Time.timeScale != 0)
         {
 
             foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
             {
                 Destroy(n);
             }
+
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
             and mouse position before calculating the angle*/
             float adjacent = cam.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
