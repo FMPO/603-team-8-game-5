@@ -9,6 +9,8 @@ public class LaunchGadget : MonoBehaviour
     public GameObject bumper;
     public Camera cam;
     public float forceMag;
+    float adjacent;
+    float opposite;
 
     // Start is called before the first frame update
     void Start()
@@ -18,19 +20,28 @@ public class LaunchGadget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        adjacent = cam.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+
+        opposite = cam.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
     }
 
     //A method called by player input, firing a projectile in that direction.
-    void Fire(InputAction.CallbackContext context)
+    public void Fire(InputAction.CallbackContext context)
     {
         //If this is when the context has started, it proceeds.
         if (context.phase.ToString() == "Started")
         {
+
+            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
+            {
+                Destroy(n);
+            }
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
             and mouse position before calculating the angle*/
             float adjacent = cam.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             float opposite = cam.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+
+            Vector2 newOrigin = new Vector2(transform.position.x, transform.position.y + 50);
 
             float angle = Mathf.Atan(opposite / adjacent) * (180 / Mathf.PI);
 
@@ -48,7 +59,7 @@ public class LaunchGadget : MonoBehaviour
             Vector2 force = new Vector2(forceMag * Mathf.Cos(angle * Mathf.PI / 180), forceMag * Mathf.Sin(angle * Mathf.PI / 180));
 
             //Creates the thrown gadget and adds force in the forward direction.
-            GameObject thrown = Instantiate(bumper, transform.position, Quaternion.Euler(0, 0, angle - 90));
+            GameObject thrown = Instantiate(bumper, newOrigin, Quaternion.Euler(0, 0, angle - 90));
             thrown.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
         }
     }
