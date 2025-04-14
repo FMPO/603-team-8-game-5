@@ -39,7 +39,7 @@ public class LaunchGadget : MonoBehaviour
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
             and mouse position before calculating the angle*/
             float adjacent = cam.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
-            float opposite = cam.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+            float opposite = cam.ScreenToWorldPoint(Input.mousePosition).y - (transform.position.y + 50);
 
             Vector2 newOrigin = new Vector2(transform.position.x, transform.position.y + 50);
 

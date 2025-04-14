@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //this is a method to just make sure the player never gets stuck out of bounds
-        DetectOutOfBounds();
+        //DetectOutOfBounds();
 
         //update this frames inputs
         inputs = inputHandler.keyBindings;

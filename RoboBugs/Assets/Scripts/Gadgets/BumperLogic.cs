@@ -29,7 +29,7 @@ public class BumperLogic : MonoBehaviour
             }
             else
             {
-                collision.GetComponent<Rigidbody2D>().AddForce(-transform.up * 300, ForceMode2D.Impulse);
+                collision.GetComponent<Rigidbody2D>().AddForce(-transform.up * 500, ForceMode2D.Impulse);
             }            
         }
     }
