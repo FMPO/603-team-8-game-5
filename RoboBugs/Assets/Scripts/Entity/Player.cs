@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
             case PlayerState.Idle:
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -223,7 +223,7 @@ public class Player : MonoBehaviour
                 }
 
                 //check for jump input
-                if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Held)
                 {
                     SetState(PlayerState.Jumpsquat);
                 }
@@ -236,7 +236,7 @@ public class Player : MonoBehaviour
                 //}
 
                 //check for menu input
-                if (inputs[InputHandler.Inputs.Menu] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Menu] == InputHandler.InputState.Held)
                 {
                     SetState(PlayerState.Menuing);
                 }
@@ -252,7 +252,7 @@ public class Player : MonoBehaviour
             case PlayerState.Run:
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -324,7 +324,7 @@ public class Player : MonoBehaviour
                     }
                 }
                 //check for jump input
-                if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Held)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -355,7 +355,7 @@ public class Player : MonoBehaviour
 
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
                 {
                     if (tempHspd != 0)
                     {
@@ -436,7 +436,7 @@ public class Player : MonoBehaviour
                 }
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Pressed)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -649,7 +649,7 @@ public class Player : MonoBehaviour
                         if (hitboxes[0].GetComponent<Hitbox>().canCancel)
                         {
                             //check for Jump input
-                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Pressed)
+                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Held)
                             {
                                 SetState(PlayerState.Jumpsquat);
                             }
@@ -744,7 +744,7 @@ public class Player : MonoBehaviour
                         if (hitboxes[0].GetComponent<Hitbox>().canCancel)
                         {
                             //check for Jump input
-                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Pressed)
+                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Held)
                             {
                                 SetState(PlayerState.Jumpsquat);
                             }
@@ -836,7 +836,7 @@ public class Player : MonoBehaviour
                         if (hitboxes[0].GetComponent<Hitbox>().canCancel)
                         {
                             //check for Jump input
-                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Pressed)
+                            if (inputs[InputHandler.Inputs.Jump] == InputHandler.InputState.Held)
                             {
                                 SetState(PlayerState.Jumpsquat);
                             }
