@@ -6,24 +6,29 @@ enum BugMovementType
     WALK_ON_GROUND, //WALK_ON_GROUND_AND_WALLS, FLY
 };
 
+public enum BugType {
+    RED, YELLOW, BLUE
+}
+
 enum BugMovementDirection
 { 
     LEFT, RIGHT
 };
 
-enum BugState
+public enum BugState
 {
     MOVING, STUNNED
 };
 
 public class BugMovement : MonoBehaviour
 {
-    private BugState currentBugState = BugState.MOVING;
     private float timeToGetUp = 3f;
     private float tempTimeToGetUp = 0f;
 
     [Header("Bug Movement vars")]
-    [SerializeField] private float wallDetectionRange = 1f;
+	public BugState BugState = BugState.MOVING;
+	public BugType BugType = BugType.RED;
+	[SerializeField] private float wallDetectionRange = 1f;
     private Vector2 wallDetectionDirection = Vector2.left;
     [SerializeField] private BugMovementType bugMovementType = BugMovementType.WALK_ON_GROUND;
     [SerializeField] private BugMovementDirection startingDirection = BugMovementDirection.LEFT;
@@ -73,7 +78,7 @@ public class BugMovement : MonoBehaviour
     void FixedUpdate()
     {
         //if the bug should be moving,...
-        if (currentBugState == BugState.MOVING)
+        if (BugState == BugState.MOVING)
         {
             //cast a ray in wallDetectionDirection direction
             RaycastHit2D hit = Physics2D.Raycast(transform.position, wallDetectionDirection.normalized, wallDetectionRange, LayerMask.GetMask("Solids"));
@@ -89,7 +94,7 @@ public class BugMovement : MonoBehaviour
             rb.AddForce(movementDirection.normalized * moveSpeed, ForceMode2D.Force);
         }
         //else if bug is stunned,...
-        else if(currentBugState == BugState.STUNNED)
+        else if(BugState == BugState.STUNNED)
         {
             //increment tempTimeToGetUp
             tempTimeToGetUp += Time.fixedDeltaTime;
@@ -107,11 +112,8 @@ public class BugMovement : MonoBehaviour
 
     public void EnterStunnedState()
     {
-        //DEBUG
-        spriteRenderer.color = Color.red;
-
         //enter the stunned state
-        currentBugState = BugState.STUNNED;
+        BugState = BugState.STUNNED;
 
         //allow bug to spin
         rb.freezeRotation = false;
@@ -125,11 +127,8 @@ public class BugMovement : MonoBehaviour
 
     public void EnterMovingState()
     {
-        //DEBUG
-        spriteRenderer.color = Color.yellow;
-
         //enter the moving state
-        currentBugState = BugState.MOVING;
+        BugState = BugState.MOVING;
 
         //reset rotation
         transform.rotation = Quaternion.identity;
