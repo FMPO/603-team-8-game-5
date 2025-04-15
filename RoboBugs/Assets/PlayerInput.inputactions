@@ -180,6 +180,28 @@
                 },
                 {
                     "name": "",
+                    "id": "841e2d9c-6b6c-4ceb-9c39-a1669cc43cfb",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0530f88-6bd8-4434-8243-40d60b2d43db",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2894b686-4d96-486a-8a73-3e1e26b81587",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
