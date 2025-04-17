@@ -88,7 +88,11 @@ public class Hurtbox : MonoBehaviour
                 //Tell bug to enter the stunned state
                 hurtBug.EnterStunnedState();
 
-                //apply a force to the bug
+                //apply a force to the bug in a direction based on the player's attack direction
+                //switch ()
+                //{ 
+
+                //}
                 hurtBug.rb.AddForce((hurtBug.gameObject.transform.position - GameObject.FindGameObjectWithTag("Player").transform.Find("Player Feet").position).normalized * hurtBug.damagedForce, ForceMode2D.Impulse);
 
                 //generate the location of the hit or block spark

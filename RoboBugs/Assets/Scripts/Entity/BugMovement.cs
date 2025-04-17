@@ -99,8 +99,8 @@ public class BugMovement : MonoBehaviour
             //increment tempTimeToGetUp
             tempTimeToGetUp += Time.fixedDeltaTime;
 
-            //if timeToGetUp has elapsed,...
-            if (tempTimeToGetUp >= timeToGetUp)
+            //if timeToGetUp has elapsed AND stunned bug has stopped moving,...
+            if (tempTimeToGetUp >= timeToGetUp && rb.velocity.sqrMagnitude < 0.5f)
             {
                 EnterMovingState();
             }
