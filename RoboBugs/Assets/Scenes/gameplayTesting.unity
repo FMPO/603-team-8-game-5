@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 1606430716}
   - component: {fileID: 1606430718}
   - component: {fileID: 1606430719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrarium
   m_TagString: Untagged
   m_Icon: {fileID: 0}

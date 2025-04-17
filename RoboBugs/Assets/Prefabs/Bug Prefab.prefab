@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 979161451311803172}
   - component: {fileID: 1823459147698430803}
   - component: {fileID: 3593621587763822047}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bug Prefab
   m_TagString: Bug
   m_Icon: {fileID: 0}

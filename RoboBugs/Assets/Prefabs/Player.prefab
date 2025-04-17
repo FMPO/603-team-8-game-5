@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: -7222035744448415508}
   - component: {fileID: 7295538302609483985}
   - component: {fileID: 7424584372907820285}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -261,6 +261,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1479d072-52fc-443d-8893-ee21078bfdae
     m_ActionName: Gameplay/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d4c7937-41c2-4f33-9703-f01c56237526
+    m_ActionName: Gameplay/Fire[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
