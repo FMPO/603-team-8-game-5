@@ -81,13 +81,20 @@ public class BugMovement : MonoBehaviour
         if (BugState == BugState.MOVING)
         {
             //cast a ray in wallDetectionDirection direction
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, wallDetectionDirection.normalized, wallDetectionRange, LayerMask.GetMask("Solids"));
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, wallDetectionDirection.normalized, wallDetectionRange, LayerMask.GetMask("Solids") | LayerMask.GetMask("Bug"));
 
-            //if the afformentioned ray hits something,...
-            if (hit)
+            //iterate through each thing the raycast hit,...
+            foreach (RaycastHit2D hit in hits)
             {
-                //flip moving direction
-                FlipMovingDirection();
+                //if the afformentioned ray hits something and that something is NOT this bug,...
+                if (hit && hit.transform.gameObject != gameObject)
+                {
+                    //flip moving direction
+                    FlipMovingDirection();
+
+                    //do not detect any other hits in the array
+                    break;
+                }
             }
 
             //apply a force in movementDirection equal to moveSpeed

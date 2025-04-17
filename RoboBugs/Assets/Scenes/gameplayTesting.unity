@@ -1385,6 +1385,10 @@ PrefabInstance:
       propertyPath: BugType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: startingDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.b
       value: 0.25490198
