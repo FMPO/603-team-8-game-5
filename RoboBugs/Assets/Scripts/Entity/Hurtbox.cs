@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -89,11 +90,9 @@ public class Hurtbox : MonoBehaviour
                 hurtBug.EnterStunnedState();
 
                 //apply a force to the bug in a direction based on the player's attack direction
-                //switch ()
-                //{ 
-
-                //}
-                hurtBug.rb.AddForce((hurtBug.gameObject.transform.position - GameObject.FindGameObjectWithTag("Player").transform.Find("Player Feet").position).normalized * hurtBug.damagedForce, ForceMode2D.Impulse);
+                Vector2 knockBackDirection = new Vector2(hitHitbox.xKnockback * (hitPlayer.facingRight ? 1 : -1), hitHitbox.yKnockback);
+                hurtBug.rb.AddForce(knockBackDirection.normalized * hurtBug.damagedForce, ForceMode2D.Impulse);
+                Debug.Log("Knockback by: " + knockBackDirection.normalized * hurtBug.damagedForce);
 
                 //generate the location of the hit or block spark
                 BoxCollider2D hurtboxCollider = gameObject.GetComponent<BoxCollider2D>();

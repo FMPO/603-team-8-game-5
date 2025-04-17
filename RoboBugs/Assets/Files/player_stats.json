@@ -51,8 +51,8 @@
 						"xOffset": -30,
 						"yOffset": 57,
 						"width": 54,
-						"height": 26,
-						"xKnockback": 2,
+						"height": 45,
+						"xKnockback": 0,
 						"yKnockback": 10,
 						"hitstun": 20
 					}
@@ -72,7 +72,7 @@
 						"yOffset": 27,
 						"width": 7,
 						"height": 27,
-						"xKnockback": 3,
+						"xKnockback": 0,
 						"yKnockback": 8,
 						"hitstun": 30
 					}
