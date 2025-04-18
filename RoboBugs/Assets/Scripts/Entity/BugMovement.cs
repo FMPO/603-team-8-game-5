@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 enum BugMovementType
 {
@@ -25,23 +26,28 @@ public class BugMovement : MonoBehaviour
     private float timeToGetUp = 3f;
     private float tempTimeToGetUp = 0f;
 
+    [Header("Important Bug Movement vars")]
+    [SerializeField] private float moveSpeed = 1f;
+    public BugType BugType = BugType.RED;
+    [SerializeField] private BugMovementDirection startingDirection = BugMovementDirection.LEFT;
+
     [Header("Bug Movement vars")]
-	public BugState BugState = BugState.MOVING;
-	public BugType BugType = BugType.RED;
-	[SerializeField] private float wallDetectionRange = 1f;
+    public BugState BugState = BugState.MOVING;
+    [SerializeField] private float wallDetectionRange = 1f;
     private Vector2 wallDetectionDirection = Vector2.left;
     [SerializeField] private BugMovementType bugMovementType = BugMovementType.WALK_ON_GROUND;
-    [SerializeField] private BugMovementDirection startingDirection = BugMovementDirection.LEFT;
-    [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private Hurtbox hurtbox;
     private Vector2 movementDirection = Vector2.left;
+    [SerializeField] private Transform leftLedgeTransform;
+    [SerializeField] private Transform rightLedgeTransform;
+    [SerializeField] private float ledgeDetectionRange = 1f;
     
 
     [Header("Bug Physics vars")]
+    public float damagedForce = 1f;
     [SerializeField] private PhysicsMaterial2D slipperyMaterial;
     [SerializeField] private PhysicsMaterial2D bouncyMaterial;
     public Rigidbody2D rb;
-    public float damagedForce = 1f;
 
     [Header("Bug Sprite vars")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -80,11 +86,12 @@ public class BugMovement : MonoBehaviour
         //if the bug should be moving,...
         if (BugState == BugState.MOVING)
         {
+            //***** Wall detection *****
             //cast a ray in wallDetectionDirection direction
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, wallDetectionDirection.normalized, wallDetectionRange, LayerMask.GetMask("Solids") | LayerMask.GetMask("Bug"));
+            RaycastHit2D[] wallHits = Physics2D.RaycastAll(transform.position, wallDetectionDirection.normalized, wallDetectionRange, LayerMask.GetMask("Solids") | LayerMask.GetMask("Bug"));
 
             //iterate through each thing the raycast hit,...
-            foreach (RaycastHit2D hit in hits)
+            foreach (RaycastHit2D hit in wallHits)
             {
                 //if the afformentioned ray hits something and that something is NOT this bug,...
                 if (hit && hit.transform.gameObject != gameObject)
@@ -95,6 +102,44 @@ public class BugMovement : MonoBehaviour
                     //do not detect any other hits in the array
                     break;
                 }
+            }
+
+            //***** Ledge detection *****
+            //cast a ray downwards from leftLedgeTransform
+            RaycastHit2D leftLedgeHit = Physics2D.Raycast(leftLedgeTransform.position, Vector2.down, ledgeDetectionRange, LayerMask.GetMask("Solids"));
+
+            //cast a ray downwards from rightLedgeTransform
+            RaycastHit2D rightLedgeHit = Physics2D.Raycast(rightLedgeTransform.position, Vector2.down, ledgeDetectionRange, LayerMask.GetMask("Solids"));
+
+            //based on leftLedgeHit, rightLedgeHit, and movementDirection, flip or don't flip
+            bool leftDetected = leftLedgeHit;
+            bool rightDetected = rightLedgeHit;
+            switch ((leftDetected, rightDetected))
+            {
+                //if both detections have solids below them,...
+                case (true, true):
+                    //do nothing
+                    break;
+                //if only the left detection has a solid below it,...
+                case (true, false):
+                    if (movementDirection == Vector2.right)
+                    {
+                        //flip moving direction
+                        FlipMovingDirection();
+                    }
+                    break;
+                //if only the right detection has a solid below it,...
+                case (false, true):
+                    if (movementDirection == Vector2.left)
+                    {
+                        //flip moving direction
+                        FlipMovingDirection();
+                    }
+                    break;
+                //if neither detections have solids below them,...
+                case (false, false):
+                    //do nothing
+                    break;
             }
 
             //apply a force in movementDirection equal to moveSpeed
@@ -172,5 +217,9 @@ public class BugMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, wallDetectionDirection.normalized * wallDetectionRange);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(leftLedgeTransform.position, Vector2.down * ledgeDetectionRange);
+        Gizmos.DrawRay(leftLedgeTransform.position, Vector2.down * ledgeDetectionRange);
     }
 }
