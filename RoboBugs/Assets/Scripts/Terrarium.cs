@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Terrarium : MonoBehaviour {
+	[SerializeField] public Sprite[ ] BugUISprites;
 	[SerializeField] private Canvas canvas;
 	[SerializeField] private List<StorageSlot> storageSlots;
+	[SerializeField] private Image heldBugImage;
+	[Space]
+	[SerializeField] private bool _isHoldingBug;
+	[SerializeField] private BugType _heldBugType;
 
 	/// <summary>
 	/// The current amount of red bugs collected
@@ -31,9 +37,36 @@ public class Terrarium : MonoBehaviour {
 		set => storageSlots[(int) BugType.BLUE].BugCount = value;
 	}
 
+	/// <summary>
+	/// Whether or not the player is holding a bug (as in dragging it)
+	/// </summary>
+	public bool IsHoldingBug {
+		get => _isHoldingBug;
+		set {
+			_isHoldingBug = value;
+			heldBugImage.enabled = _isHoldingBug;
+		}
+	}
+
+	/// <summary>
+	/// The current type of bug being held
+	/// </summary>
+	public BugType HeldBugType {
+		get => _heldBugType;
+		set {
+			_heldBugType = value;
+			heldBugImage.sprite = BugUISprites[(int) _heldBugType];
+		}
+	}
+
 	private void Start ( ) {
 		// Disable the canvas when the game starts
 		canvas.gameObject.SetActive(false);
+		IsHoldingBug = false;
+	}
+
+	private void Update ( ) {
+		heldBugImage.transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 
 	private void OnTriggerEnter2D (Collider2D collision) {

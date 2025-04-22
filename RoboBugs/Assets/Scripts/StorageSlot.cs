@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class StorageSlot : MonoBehaviour {
+public class StorageSlot : MonoBehaviour, IPointerDownHandler {
 	[SerializeField] private Image bugImage;
 	[SerializeField] private TextMeshProUGUI bugCountText;
-	[SerializeField] private Sprite[ ] bugUISprites;
+	[SerializeField] private Terrarium terrarium;
 	[Space]
 	[SerializeField] private BugType _bugType;
 	[SerializeField] private int _bugCount;
@@ -21,7 +22,7 @@ public class StorageSlot : MonoBehaviour {
 		get => _bugType;
 		set {
 			_bugType = value;
-			bugImage.sprite = bugUISprites[(int) _bugType];
+			bugImage.sprite = terrarium.BugUISprites[(int) _bugType];
 		}
 	}
 
@@ -59,9 +60,15 @@ public class StorageSlot : MonoBehaviour {
 	}
 
 	private void OnValidate ( ) {
+		terrarium = FindObjectOfType<Terrarium>( );
+
 		BugType = BugType;
 		BugCount = BugCount;
 		HasBug = HasBug;
 		HideBugCount = HideBugCount;
+	}
+
+	public void OnPointerDown (PointerEventData eventData) {
+		Debug.Log("HERE");
 	}
 }

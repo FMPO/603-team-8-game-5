@@ -462,6 +462,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 261791371628542652, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
+    - target: {fileID: 514338851598293960, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 786895798779065433, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -510,6 +518,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1647009103348833457, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 1742108548811540697, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -594,6 +606,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411360338336332340, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 2573583449901822048, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -614,6 +630,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2818916991068875624, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
+    - target: {fileID: 2860375235119178424, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 2886033167904965836, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_Name
       value: Terrarium
@@ -682,6 +706,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4903534596099503858, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 5263281559787900986, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -754,6 +782,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6412634295069389089, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: m_Name
+      value: Held Bug Image
+      objectReference: {fileID: 0}
     - target: {fileID: 6502488537077064055, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -770,6 +802,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6952536061837499181, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 7231191016316980749, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -858,6 +894,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8622404951308159867, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 9142698448344941982, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2914,6 +2954,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1001620107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7602618141174604508, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
+  m_PrefabInstance: {fileID: 166660929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f083f5cb0de2c784d8ab4db89ce87955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1008244541
 GameObject:
   m_ObjectHideFlags: 0
