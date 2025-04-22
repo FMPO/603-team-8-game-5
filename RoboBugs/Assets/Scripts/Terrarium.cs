@@ -12,6 +12,18 @@ public class Terrarium : MonoBehaviour {
 	[Space]
 	[SerializeField] private bool _isHoldingBug;
 	[SerializeField] private BugType _heldBugType;
+	[SerializeField] public StorageSlot HeldFromStorageSlot;
+	[SerializeField] private StorageSlot _selectedStorageSlot;
+
+	/// <summary>
+	/// The current selected storage slot
+	/// </summary>
+	public StorageSlot SelectedStorageSlot {
+		get => _selectedStorageSlot;
+		set {
+			_selectedStorageSlot = value;
+		}
+	}
 
 	/// <summary>
 	/// The current amount of red bugs collected
@@ -44,7 +56,7 @@ public class Terrarium : MonoBehaviour {
 		get => _isHoldingBug;
 		set {
 			_isHoldingBug = value;
-			heldBugImage.enabled = _isHoldingBug;
+			heldBugImage.color = (_isHoldingBug ? Color.white : Color.clear);
 		}
 	}
 
@@ -55,7 +67,10 @@ public class Terrarium : MonoBehaviour {
 		get => _heldBugType;
 		set {
 			_heldBugType = value;
-			heldBugImage.sprite = BugUISprites[(int) _heldBugType];
+
+			if (IsHoldingBug) {
+				heldBugImage.sprite = BugUISprites[(int) _heldBugType];
+			}
 		}
 	}
 
@@ -63,6 +78,7 @@ public class Terrarium : MonoBehaviour {
 		// Disable the canvas when the game starts
 		canvas.gameObject.SetActive(false);
 		IsHoldingBug = false;
+		SelectedStorageSlot = null;
 	}
 
 	private void Update ( ) {
