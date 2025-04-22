@@ -3917,7 +3917,6 @@ MonoBehaviour:
   - {fileID: 6117064307559981626, guid: bdd4ef216557b174f9773f535c7098fb, type: 3}
   - {fileID: 6117064307559981626, guid: 924a31747bd980c48b148f7bced983c4, type: 3}
   - {fileID: 6117064307559981626, guid: 9ef2d1e78de73914997cd1cd69972b41, type: 3}
-  bumper: {fileID: 6117064307559981626, guid: bdd4ef216557b174f9773f535c7098fb, type: 3}
   cam: {fileID: 519420031}
   forceMag: 150
 --- !u!1 &1245363636
