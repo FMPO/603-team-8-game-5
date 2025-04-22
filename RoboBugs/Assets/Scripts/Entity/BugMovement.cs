@@ -51,6 +51,8 @@ public class BugMovement : MonoBehaviour
 
     [Header("Bug Sprite vars")]
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite movingSprite;
+    [SerializeField] private Sprite stunnedSprite;
 
     void Start()
     {
@@ -164,6 +166,9 @@ public class BugMovement : MonoBehaviour
 
     public void EnterStunnedState()
     {
+        //change sprite to stunned
+        spriteRenderer.sprite = stunnedSprite;
+
         //enter the stunned state
         BugState = BugState.STUNNED;
 
@@ -179,6 +184,9 @@ public class BugMovement : MonoBehaviour
 
     public void EnterMovingState()
     {
+        //change sprite to wandering
+        spriteRenderer.sprite = movingSprite;
+
         //enter the moving state
         BugState = BugState.MOVING;
 

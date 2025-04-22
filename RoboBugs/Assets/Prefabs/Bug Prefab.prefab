@@ -235,13 +235,14 @@ MonoBehaviour:
   hurtbox: {fileID: 4387768694758910186}
   leftLedgeTransform: {fileID: 8177625567698323118}
   rightLedgeTransform: {fileID: 4774003761279028158}
-  ledgeDetectionTransform: {fileID: 8177625567698323118}
   ledgeDetectionRange: 6
+  damagedForce: 500
   slipperyMaterial: {fileID: 6200000, guid: 4bc713e77631c6440ac5a6b2f91de585, type: 2}
   bouncyMaterial: {fileID: 6200000, guid: e92c7365548644840a45ef4dd542620d, type: 2}
   rb: {fileID: 1823459147698430803}
-  damagedForce: 500
   spriteRenderer: {fileID: 3700614967901195281}
+  movingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  stunnedSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
 --- !u!1001 &3355116964546994131
 PrefabInstance:
   m_ObjectHideFlags: 0
