@@ -20,7 +20,7 @@ public class Terrarium : MonoBehaviour {
 		get => _redBugsCollected;
 		set {
 			_redBugsCollected = value;
-			redBugsCollectedText.text = "Red: " + _redBugsCollected;
+			redBugsCollectedText.text = _redBugsCollected.ToString();
 		}
 	}
 
@@ -31,7 +31,7 @@ public class Terrarium : MonoBehaviour {
 		get => _yellowBugsCollected;
 		set {
 			_yellowBugsCollected = value;
-			yellowBugsCollectedText.text = "Yellow: " + _yellowBugsCollected;
+			yellowBugsCollectedText.text = _yellowBugsCollected.ToString();
 		}
 	}
 
@@ -42,7 +42,7 @@ public class Terrarium : MonoBehaviour {
 		get => _blueBugsCollected;
 		set {
 			_blueBugsCollected = value;
-			blueBugsCollectedText.text = "Blue: " + _blueBugsCollected;
+			blueBugsCollectedText.text = _blueBugsCollected.ToString();
 		}
 	}
 
