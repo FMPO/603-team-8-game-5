@@ -346,6 +346,13 @@ public class Player : MonoBehaviour
                 //{
                 //    SetState(PlayerState.Shield);
                 //}
+
+                if (inputs[InputHandler.Inputs.Menu] == InputHandler.InputState.Held)
+                {
+                    SwapCharacter();
+
+                }
+
                 //check for collision
                 if (grounded.collider == null)
                 {
@@ -488,6 +495,12 @@ public class Player : MonoBehaviour
                 //{
                 //    SetState(PlayerState.Shield);
                 //}
+
+                if (inputs[InputHandler.Inputs.Menu] == InputHandler.InputState.Held)
+                {
+                    SwapCharacter();
+
+                }
 
                 break;
             case PlayerState.Landing:

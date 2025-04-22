@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1bde985276dc33642a245663188fe6c0
+  - enabled: 1
+    path: Assets/Scenes/GreyboxOne.unity
+    guid: 147dc86b8d08c894584ef43fdab45bd1
+  - enabled: 1
     path: Assets/Scenes/gameplayTesting.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
