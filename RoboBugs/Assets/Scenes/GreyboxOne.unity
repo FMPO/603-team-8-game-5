@@ -2747,6 +2747,10 @@ PrefabInstance:
       propertyPath: BugType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: damagedForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -2761,11 +2765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -653
+      value: -232
       objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 204
+      value: -42
       objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3440,6 +3444,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1206052094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1195620023101770444, guid: 774f88b65c27c23488acb14c9e38786f, type: 3}
+  m_PrefabInstance: {fileID: 214834063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214834064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b05cc7425551d4ba94ca7afce1ede3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1206052097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8779920728074695542, guid: 774f88b65c27c23488acb14c9e38786f, type: 3}
+  m_PrefabInstance: {fileID: 214834063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214834064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1206052098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214834064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31593d39ccb5f4146a6a9927fe4fdf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrownObjects:
+  - {fileID: 6117064307559981626, guid: bdd4ef216557b174f9773f535c7098fb, type: 3}
+  - {fileID: 6117064307559981626, guid: 924a31747bd980c48b148f7bced983c4, type: 3}
+  - {fileID: 6117064307559981626, guid: 9ef2d1e78de73914997cd1cd69972b41, type: 3}
+  cam: {fileID: 519420031}
+  forceMag: 225
 --- !u!1 &1245363636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,9 +4991,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1823459147698430803, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: m_GravityScale
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: BugType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: moveSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: damagedForce
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: startingDirection
@@ -5024,6 +5080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1823459147698430803, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: m_GravityScale
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 252

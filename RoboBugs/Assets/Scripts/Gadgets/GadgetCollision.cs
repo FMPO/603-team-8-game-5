@@ -25,7 +25,14 @@ public class NewBehaviourScript : MonoBehaviour
     //A method that detects if something has entered this gameObject's trigger.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.localScale);
+        //Left, top, right, bottom.
+        float[] bounds = 
+        {   collision.transform.position.x - collision.transform.localScale.x / 2,
+            collision.transform.position.y + collision.transform.localScale.y / 2,
+            collision.transform.position.x + collision.transform.localScale.x / 2,
+            collision.transform.position.y - collision.transform.localScale.y / 2
+        };
+
         //If a wall has entered the trigger, this gameObject is replaced with a "placedBumper."
         if (collision.gameObject.tag == "Wall")
         {
@@ -38,6 +45,39 @@ public class NewBehaviourScript : MonoBehaviour
             else
             {
 
+                Vector3 newPosition;
+
+                if (transform.position.x > bounds[0] && transform.position.x < bounds[2])
+                {
+                    //Top Side
+                    if (transform.position.y > collision.transform.position.y)
+                    {
+                        newPosition = new Vector3(transform.position.x, bounds[1], transform.position.z);
+
+                        Instantiate(placedGadget, newPosition, Quaternion.Euler(0, 0, 180));
+                    }
+                    //Bottom Side
+                    else
+                    {
+                        newPosition = new Vector3(transform.position.x, bounds[3], transform.position.z);
+                        Instantiate(placedGadget, newPosition, Quaternion.Euler(0, 0, 0));
+                    }
+                }
+                else if (transform.position.y > bounds[3] && transform.position.y < bounds[1])
+                {
+                    //Left Side
+                    if (transform.position.x < collision.transform.position.x)
+                    {
+                        newPosition = new Vector3(bounds[0], transform.position.y, transform.position.z);
+                        Instantiate(placedGadget, newPosition, Quaternion.Euler(0, 0, 270));
+                    }
+                    //Right Side
+                    else
+                    {
+                        newPosition = new Vector3(bounds[2], transform.position.y, transform.position.z);
+                        Instantiate(placedGadget, newPosition, Quaternion.Euler(0, 0, 90));
+                    }
+                }
             }
         }
     }

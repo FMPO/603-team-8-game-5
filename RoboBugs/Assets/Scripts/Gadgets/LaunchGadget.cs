@@ -46,9 +46,13 @@ public class LaunchGadget : MonoBehaviour
                 temp++;
             }
 
-            if (temp == 3)
+            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
             {
-                Destroy(GameObject.FindGameObjectWithTag("Bumper"));
+                if (temp >= 3)
+                {
+                    Destroy(n);
+                    temp--;
+                }
             }
 
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
