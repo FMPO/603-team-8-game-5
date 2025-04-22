@@ -6,15 +6,17 @@ using UnityEngine.InputSystem;
 public class LaunchGadget : MonoBehaviour
 {
     //Declares necessary variables.
-    public GameObject bumper;
+    public GameObject[] thrownObjects;
     public Camera cam;
     public float forceMag;
-    float adjacent;
-    float opposite;
+    private int gadgetIndex;
+    private float adjacent;
+    private float opposite;
 
     // Start is called before the first frame update
     void Start()
     {
+        gadgetIndex = 0;
     }
 
     // Update is called once per frame
@@ -31,10 +33,16 @@ public class LaunchGadget : MonoBehaviour
         //If this is when the context has started, it proceeds.
         if (context.phase.ToString() == "Started" && Time.timeScale != 0)
         {
+            int temp = 0;
 
             foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
             {
-                Destroy(n);
+                temp++;
+            }
+
+            if (temp == 3)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Bumper"));
             }
 
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
@@ -60,8 +68,36 @@ public class LaunchGadget : MonoBehaviour
             Vector2 force = new Vector2(forceMag * Mathf.Cos(angle * Mathf.PI / 180), forceMag * Mathf.Sin(angle * Mathf.PI / 180));
 
             //Creates the thrown gadget and adds force in the forward direction.
-            GameObject thrown = Instantiate(bumper, newOrigin, Quaternion.Euler(0, 0, angle - 90));
+            GameObject thrown = Instantiate(thrownObjects[gadgetIndex], newOrigin, Quaternion.Euler(0, 0, angle - 90));
             thrown.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+        }
+    }
+
+    public void Scroll(InputAction.CallbackContext context)
+    {
+        //Debug.Log(context.action.ReadValue<float>());
+
+        if (context.action.ReadValue<float>() < 0)
+        {
+            if (gadgetIndex == 0)
+            {
+                gadgetIndex = 2;
+            }
+            else
+            {
+                gadgetIndex--;
+            }
+        }
+        else if (context.action.ReadValue<float>() > 0)
+        {
+            if (gadgetIndex == 2)
+            {
+                gadgetIndex = 0;
+            }
+            else
+            {
+                gadgetIndex++;
+            }
         }
     }
 

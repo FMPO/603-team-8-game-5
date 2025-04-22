@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class NewBehaviourScript : MonoBehaviour
 {
     //Declares necessary variables.
-    public GameObject placedBumper;
+    public GameObject placedGadget;
     private Rigidbody2D rb;
 
     void Start()
@@ -25,11 +25,20 @@ public class NewBehaviourScript : MonoBehaviour
     //A method that detects if something has entered this gameObject's trigger.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.transform.localScale);
         //If a wall has entered the trigger, this gameObject is replaced with a "placedBumper."
         if (collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
-            Instantiate(placedBumper, gameObject.transform.position, gameObject.transform.rotation);
+
+            if (!gameObject.name.Contains("Slime"))
+            {
+                Instantiate(placedGadget, gameObject.transform.position, gameObject.transform.rotation);
+            }
+            else
+            {
+
+            }
         }
     }
 }

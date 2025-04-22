@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7585333410347577132}
   - component: {fileID: 6237628420527334354}
   - component: {fileID: 5459532043858731820}
-  - component: {fileID: -3356544131218058793}
+  - component: {fileID: 6680623924005389218}
   m_Layer: 0
-  m_Name: ThrownBumper
+  m_Name: ThrownSlime
   m_TagString: Bumper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9622642, g: 0.18609825, b: 0.18609825, a: 1}
+  m_Color: {r: 0.26179245, g: 0.5, b: 0.30021304, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-3356544131218058793
+--- !u!114 &6680623924005389218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12430bdb0f60a7342a18b1b9a9a9c45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placedGadget: {fileID: 2446816349462152976, guid: e384f5052d49bf04386f2426d4227c9a, type: 3}
+  placedGadget: {fileID: 2446816349462152976, guid: 3f36beeef84dfdd47a95a5ceff8415eb, type: 3}
