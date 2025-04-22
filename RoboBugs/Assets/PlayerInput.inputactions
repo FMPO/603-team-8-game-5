@@ -201,7 +201,7 @@
                 {
                     "name": "",
                     "id": "e0530f88-6bd8-4434-8243-40d60b2d43db",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -403,6 +403,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Stadia",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21fd3fcc-2456-4d9d-8f7d-dd9fa0872082",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false

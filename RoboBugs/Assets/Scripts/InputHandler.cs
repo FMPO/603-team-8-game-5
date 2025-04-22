@@ -176,6 +176,10 @@ public class InputHandler : MonoBehaviour
                 HandleButtonInput(context, Inputs.Shield);
                 break;
             case "Menu":
+                if (context.started)
+                {
+                    gameObject.GetComponent<Player>().characterSwapFlag = false;
+                }
                 HandleButtonInput(context, Inputs.Menu);
                 break;
             case "Pause":

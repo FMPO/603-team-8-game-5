@@ -12,6 +12,7 @@ public class LaunchGadget : MonoBehaviour
     private int gadgetIndex;
     private float adjacent;
     private float opposite;
+    [SerializeField] private Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,11 @@ public class LaunchGadget : MonoBehaviour
     //A method called by player input, firing a projectile in that direction.
     public void Fire(InputAction.CallbackContext context)
     {
+        if(player == null || player.characterId !=1)
+        {
+            //Debug.Log("Player is null or characterId is not 1");
+            return;
+        }
         //If this is when the context has started, it proceeds.
         if (context.phase.ToString() == "Started" && Time.timeScale != 0)
         {

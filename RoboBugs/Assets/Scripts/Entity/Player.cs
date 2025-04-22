@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     private JSONReader.WeaponDataList weaponData;
     //private int currentAnimControllerIndex = 0;
     //public int currentColorIndex = 0;
+    public int characterId = 0;
+    public bool characterSwapFlag = false;
 
     //Player fields
     public int runSpeed = 3;
@@ -179,7 +181,7 @@ public class Player : MonoBehaviour
             case PlayerState.Idle:
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held && characterId == 0)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -238,7 +240,8 @@ public class Player : MonoBehaviour
                 //check for menu input
                 if (inputs[InputHandler.Inputs.Menu] == InputHandler.InputState.Held)
                 {
-                    SetState(PlayerState.Menuing);
+                    SwapCharacter();
+
                 }
 
                 LerpHspd(0, 1);
@@ -252,7 +255,7 @@ public class Player : MonoBehaviour
             case PlayerState.Run:
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held && characterId == 0)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -355,7 +358,7 @@ public class Player : MonoBehaviour
 
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held && characterId == 0)
                 {
                     if (tempHspd != 0)
                     {
@@ -436,7 +439,7 @@ public class Player : MonoBehaviour
                 }
 
                 //check for attack input
-                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held)
+                if (inputs[InputHandler.Inputs.Attack] == InputHandler.InputState.Held && characterId == 0)
                 {
                     //check for turnaround inputs
                     if (inputs[InputHandler.Inputs.Left] == InputHandler.InputState.Held)
@@ -938,6 +941,7 @@ public class Player : MonoBehaviour
 
         gameObject.transform.position += new Vector3(hspd, vspd, 0);
         gameObject.GetComponent<SpriteRenderer>().flipX = facingRight ? false : true;
+        animator.SetInteger("characterID", characterId);
 
         //check for ground collision
         if (grounded.collider != null && vspd <= 0)
@@ -1377,10 +1381,10 @@ public class Player : MonoBehaviour
 
     public void DetectOutOfBounds()
     {
-        if (gameObject.transform.position.y < -360 ||
-            gameObject.transform.position.y > 360 ||
-            gameObject.transform.position.x < -640 ||
-            gameObject.transform.position.x > 640)
+        if (gameObject.transform.position.y < -3600 ||
+            gameObject.transform.position.y > 3600 ||
+            gameObject.transform.position.x < -6400||
+            gameObject.transform.position.x > 6400)
         {
             gameObject.transform.position = new Vector3(0, 0, 0);
             ResetBoxCollider();
@@ -1683,5 +1687,15 @@ public class Player : MonoBehaviour
     public void JumpSound()
     {
         GameManager.audioManager.PlayJumpSound();
+    }
+
+    public void SwapCharacter()
+    {
+        if (characterSwapFlag == false)
+        {
+
+            characterId = characterId == 0 ? 1 : 0;
+            characterSwapFlag = true;
+        }
     }
 }
