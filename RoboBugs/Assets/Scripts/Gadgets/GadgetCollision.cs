@@ -33,7 +33,6 @@ public class NewBehaviourScript : MonoBehaviour
             collision.transform.position.y - collision.transform.localScale.y / 2
         };
 
-        Debug.Log(collision.transform.localScale);
         //If a wall has entered the trigger, this gameObject is replaced with a "placedBumper."
         if (collision.gameObject.tag == "Wall")
         {
@@ -45,8 +44,6 @@ public class NewBehaviourScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Y :" + bounds[3] + " < " + transform.position.y + " < " + bounds[1]);
-                Debug.Log("X :" + bounds[0] + " < " + transform.position.x + " < " + bounds[2]);
 
                 Vector3 newPosition;
 
