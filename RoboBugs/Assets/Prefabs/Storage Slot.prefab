@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1410730840473099388}
   - component: {fileID: 533271053707569937}
   m_Layer: 5
-  m_Name: Amount
+  m_Name: Bug Count Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -92,12 +92,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 10
+  m_fontSizeMax: 0.25
   m_fontStyle: 0
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 1024
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 5430081497403050307}
   - component: {fileID: 7338148134314004624}
   - component: {fileID: 8925913331546445357}
+  - component: {fileID: 4760878789795645350}
   m_Layer: 5
   m_Name: Storage Slot
   m_TagString: Untagged
@@ -211,6 +212,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4760878789795645350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229157454020009818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bugImage: {fileID: 5685406920251500794}
+  bugCountText: {fileID: 533271053707569937}
+  bugUISprites:
+  - {fileID: -1936413037, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  - {fileID: 939680771, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  - {fileID: -1878564921, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  _bugType: 0
+  _bugCount: 0
+  _hasBug: 1
+  _hideBugCount: 0
 --- !u!1 &7550336605607923712
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +246,7 @@ GameObject:
   - component: {fileID: 424407411509488320}
   - component: {fileID: 5685406920251500794}
   m_Layer: 5
-  m_Name: Bug Sprite
+  m_Name: Bug Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

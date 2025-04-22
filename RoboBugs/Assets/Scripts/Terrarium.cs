@@ -5,53 +5,33 @@ using UnityEngine;
 
 public class Terrarium : MonoBehaviour {
 	[SerializeField] private Canvas canvas;
-	[SerializeField] private TextMeshProUGUI redBugsCollectedText;
-	[SerializeField] private TextMeshProUGUI yellowBugsCollectedText;
-	[SerializeField] private TextMeshProUGUI blueBugsCollectedText;
-	[Space]
-	[SerializeField] private int _redBugsCollected;
-	[SerializeField] private int _yellowBugsCollected;
-	[SerializeField] private int _blueBugsCollected;
+	[SerializeField] private List<StorageSlot> storageSlots;
 
 	/// <summary>
 	/// The current amount of red bugs collected
 	/// </summary>
 	public int RedBugsCollected {
-		get => _redBugsCollected;
-		set {
-			_redBugsCollected = value;
-			redBugsCollectedText.text = _redBugsCollected.ToString();
-		}
+		get => storageSlots[(int) BugType.RED].BugCount;
+		set => storageSlots[(int) BugType.RED].BugCount = value;
 	}
 
 	/// <summary>
 	/// The current amount of yellow bugs collected
 	/// </summary>
 	public int YellowBugsCollected {
-		get => _yellowBugsCollected;
-		set {
-			_yellowBugsCollected = value;
-			yellowBugsCollectedText.text = _yellowBugsCollected.ToString();
-		}
+		get => storageSlots[(int) BugType.YELLOW].BugCount;
+		set => storageSlots[(int) BugType.YELLOW].BugCount = value;
 	}
 
 	/// <summary>
 	/// The current amount of blue bugs collected
 	/// </summary>
 	public int BlueBugsCollected {
-		get => _blueBugsCollected;
-		set {
-			_blueBugsCollected = value;
-			blueBugsCollectedText.text = _blueBugsCollected.ToString();
-		}
+		get => storageSlots[(int) BugType.BLUE].BugCount;
+		set => storageSlots[(int) BugType.BLUE].BugCount = value;
 	}
 
 	private void Start ( ) {
-		// Update all text objects to match the default collected bugs
-		RedBugsCollected = RedBugsCollected;
-		YellowBugsCollected = YellowBugsCollected;
-		BlueBugsCollected = BlueBugsCollected;
-
 		// Disable the canvas when the game starts
 		canvas.gameObject.SetActive(false);
 	}
