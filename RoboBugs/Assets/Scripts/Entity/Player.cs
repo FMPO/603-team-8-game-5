@@ -442,7 +442,7 @@ public class Player : MonoBehaviour
                 if (touchingWall.collider != null && touchingWall.collider.gameObject.tag != "slope")
                 {
                     SnapToWall(touchingWall);
-                    hspd = -hspd;
+                    hspd = 0;
                 }
 
                 //check for attack input
