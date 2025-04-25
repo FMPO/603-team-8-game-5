@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     //Declares necessary variables.
     public GameObject placedGadget;
+    public GameObject alternateGadget;
     private Rigidbody2D rb;
 
     void Start()
@@ -76,6 +77,40 @@ public class NewBehaviourScript : MonoBehaviour
                     {
                         newPosition = new Vector3(bounds[2], transform.position.y, transform.position.z);
                         Instantiate(placedGadget, newPosition, Quaternion.Euler(0, 0, 90));
+                    }
+                }
+                //Left Corner Test
+                else if (transform.position.x < collision.transform.position.x)
+                {
+                    //Top Left
+                    if (transform.position.y > collision.transform.position.y)
+                    {
+                        newPosition = new Vector3(bounds[0], bounds[1], transform.position.z);
+
+                        Instantiate(alternateGadget, newPosition, Quaternion.Euler(0, 0, 270));
+                    }
+                    //Bottom Left
+                    else
+                    {
+                        newPosition = new Vector3(bounds[0], bounds[3], transform.position.z);
+                        Instantiate(alternateGadget, newPosition, Quaternion.Euler(0, 0, 0));
+                    }
+                }
+                //Right Corner Test
+                else if (transform.position.x > collision.transform.position.x)
+                {
+                    //Top Right
+                    if (transform.position.y > collision.transform.position.y)
+                    {
+                        newPosition = new Vector3(bounds[2], bounds[1], transform.position.z);
+
+                        Instantiate(alternateGadget, newPosition, Quaternion.Euler(0, 0, 180));
+                    }
+                    //Bottom Right
+                    else
+                    {
+                        newPosition = new Vector3(bounds[2], bounds[3], transform.position.z);
+                        Instantiate(alternateGadget, newPosition, Quaternion.Euler(0, 0, 90));
                     }
                 }
             }
