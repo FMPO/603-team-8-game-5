@@ -25,6 +25,7 @@ public class BugMovement : MonoBehaviour
 {
     private float timeToGetUp = 3f;
     private float tempTimeToGetUp = 0f;
+    private float bugGravity;
 
     [Header("Important Bug Movement vars")]
     [SerializeField] private float moveSpeed = 1f;
@@ -56,6 +57,8 @@ public class BugMovement : MonoBehaviour
 
     void Start()
     {
+        bugGravity = rb.gravityScale;
+
         //flip sprite and movementDirection depending on startingDirection
         if (startingDirection == BugMovementDirection.LEFT)
         {
@@ -229,5 +232,14 @@ public class BugMovement : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawRay(leftLedgeTransform.position, Vector2.down * ledgeDetectionRange);
         Gizmos.DrawRay(leftLedgeTransform.position, Vector2.down * ledgeDetectionRange);
+    }
+
+    //A get variable that returns the gravityScale of this bug's rigidBody
+    public float BugGravity
+    {
+        get
+        {
+            return bugGravity;
+        }
     }
 }
