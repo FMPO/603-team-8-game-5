@@ -31,27 +31,30 @@ public class LaunchGadget : MonoBehaviour
     //A method called by player input, firing a projectile in that direction.
     public void Fire(InputAction.CallbackContext context)
     {
-        if(player == null || player.characterId !=1)
+        //Test to see if this is the right character. If not, return.
+        if (player == null || player.characterId !=1)
         {
-            //Debug.Log("Player is null or characterId is not 1");
             return;
         }
+
         //If this is when the context has started, it proceeds.
         if (context.phase.ToString() == "Started" && Time.timeScale != 0)
         {
-            int temp = 0;
+            int gadgetCount = 0;
 
+            //Iterates for each gadget in the world.
             foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
             {
-                temp++;
+                gadgetCount++;
             }
 
+            //If there are more than three, destroy the oldest one until only three are left.
             foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
             {
-                if (temp >= 3)
+                if (gadgetCount >= 3)
                 {
                     Destroy(n);
-                    temp--;
+                    gadgetCount--;
                 }
             }
 
@@ -83,10 +86,16 @@ public class LaunchGadget : MonoBehaviour
         }
     }
 
+    //Changes the current equipped gadget when called. 
     public void Scroll(InputAction.CallbackContext context)
     {
-        //Debug.Log(context.action.ReadValue<float>());
+        //If the game is paused, return.
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
 
+        //If the player scrolls down, they will go to the previous gadget index.
         if (context.action.ReadValue<float>() < 0)
         {
             if (gadgetIndex == 0)
@@ -98,6 +107,7 @@ public class LaunchGadget : MonoBehaviour
                 gadgetIndex--;
             }
         }
+        //Otherwise, if they scroll up, they will go to the next gadget index.
         else if (context.action.ReadValue<float>() > 0)
         {
             if (gadgetIndex == 2)

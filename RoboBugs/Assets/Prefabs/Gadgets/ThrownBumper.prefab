@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedGadget: {fileID: 2446816349462152976, guid: e384f5052d49bf04386f2426d4227c9a, type: 3}
+  alternateGadget: {fileID: 2446816349462152976, guid: 04b317a9a0e7b9a43898f52c90b3f018, type: 3}
