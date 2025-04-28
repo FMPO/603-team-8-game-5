@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Metal Ground Rule Tile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 395076625, guid: 5641050d502a5e04fb5877e9147110a1, type: 3}
+  m_DefaultSprite: {fileID: -533459481, guid: 7e4c26a45073ef9499acef50a67ae35c, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 395076625, guid: 5641050d502a5e04fb5877e9147110a1, type: 3}
+    - {fileID: 173712787, guid: 7e4c26a45073ef9499acef50a67ae35c, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 642640735, guid: 5641050d502a5e04fb5877e9147110a1, type: 3}
+    - {fileID: -533459481, guid: 7e4c26a45073ef9499acef50a67ae35c, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
