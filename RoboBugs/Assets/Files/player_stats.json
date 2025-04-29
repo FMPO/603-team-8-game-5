@@ -3,87 +3,281 @@
 		{
 			"weapon": "promethius",
 			"runSpeed": 4,
-			"jumpForce": 11,
+			"jumpForce": 12,
 			"maxHitboxes": 1,
 			"impulseFrames": {
-				"sideAttackImpulseFrames": [],
-				"upAttackImpulseFrames": [],
-				"downAttackImpulseFrames": [2]
+				"sideAttackImpulseFrames": [ 2 ],
+				"upAttackImpulseFrames": [ 3],
+				"downAttackImpulseFrames": [3]
 			},
 			"impulseData": {
-				"sideAttackImpulseData": [],
-				"upAttackImpulseData": [],
-				"downAttackImpulseData": [
+				"sideAttackImpulseData": [
 					{
-						"xImpulse": 0,
-						"yImpulse": -10
+						"xImpulse": 3,
+						"yImpulse": 1
+					}
+				],
+				"upAttackImpulseData": [
+					{
+						"xImpulse": 2,
+						"yImpulse": 3
+					}
+
+				],
+				"downAttackImpulseData": [
+					
+					{
+						"xImpulse": 6,
+						"yImpulse": -6
 					}
 				]
 			},
 			"frameData": {
 				"sideAttackFrames": {
-					"startFrames": [2],
-					"endFrames": [3]
+					"startFrames": [ 2 ],
+					"endFrames": [ 3 ]
 				},
 				"upAttackFrames": {
-					"startFrames": [2],
-					"endFrames": [3]
+					"startFrames": [ 2],
+					"endFrames": [ 4]
 				},
 				"downAttackFrames": {
-					"startFrames": [3, 5],
-					"endFrames": [4, 6]
+					"startFrames": [ 3 ],
+					"endFrames": [ 9 ]
 				}
 			},
 			"hitboxData": {
 				"sideAttackHitboxes": [
 					{
-						"xOffset": 9,
-						"yOffset": 44,
-						"width": 22,
-						"height": 43,
-						"xKnockback": 4,
-						"yKnockback": 6,
+						"xOffset": 6,
+						"yOffset": 20,
+						"width": 21,
+						"height": 11,
+						"xKnockback": 6,
+						"yKnockback": 1,
+						"hitstun": 25
+					}
+				],
+				"upAttackHitboxes": [
+					{
+						"xOffset": -1,
+						"yOffset": 37,
+						"width": 14,
+						"height": 31,
+						"xKnockback": 1,
+						"yKnockback": 8,
+						"hitstun": 30
+					}
+				],
+				"downAttackHitboxes": [
+					{
+						"xOffset": 4,
+						"yOffset": 12,
+						"width": 14,
+						"height": 11,
+						"xKnockback": 8,
+						"yKnockback": -8,
+						"hitstun": 25
+					}
+				]
+			},
+			"hurtboxData": {
+				"idleHurtbox": {
+					"xOffset": -9,
+					"yOffset": 27,
+					"width": 21,
+					"height": 26
+				},
+				"runHurtbox": {
+					"xOffset": -18,
+					"yOffset": 31,
+					"width": 32,
+					"height": 30
+				},
+				"jumpsquatHurtbox": {
+					"xOffset": -7,
+					"yOffset": 38,
+					"width": 16,
+					"height": 37
+				},
+				"jumpHurtbox": {
+					"xOffset": -10,
+					"yOffset": 37,
+					"width": 24,
+					"height": 24
+				},
+				"landingHurtbox": {
+					"xOffset": -7,
+					"yOffset": 38,
+					"width": 16,
+					"height": 37
+				},
+				"hitstunHurtbox": {
+					"xOffset": -9,
+					"yOffset": 31,
+					"width": 23,
+					"height": 30
+				},
+				"shieldHurtbox": {
+					"xOffset": -10,
+					"yOffset": 26,
+					"width": 20,
+					"height": 25
+				},
+				"sideAttackHurtbox": {
+					"xOffset": -11,
+					"yOffset": 27,
+					"width": 25,
+					"height": 26
+				},
+				"upAttackHurtbox": {
+					"xOffset": -5,
+					"yOffset": 25,
+					"width": 15,
+					"height": 24
+				},
+				"downAttackHurtbox": {
+					"xOffset": -8,
+					"yOffset": 28,
+					"width": 19,
+					"height": 23
+				},
+				"menuingHurtbox": {
+					"xOffset": 0,
+					"yOffset": 0,
+					"width": 0,
+					"height": 0
+				}
+			}
+		},
+		{
+			"weapon": "rifle",
+			"runSpeed": 4,
+			"jumpForce": 10,
+			"maxHitboxes": 1,
+			"impulseFrames": {
+				"sideAttackImpulseFrames": [ 1, 7 ],
+				"upAttackImpulseFrames": [ 1, 7 ],
+				"downAttackImpulseFrames": [ 1, 6, 7, 8, 9 ]
+			},
+			"impulseData": {
+				"sideAttackImpulseData": [
+					{
+						"xImpulse": 0,
+						"yImpulse": 4
+					},
+					{
+						"xImpulse": -9,
+						"yImpulse": 3
+					}
+				],
+				"upAttackImpulseData": [
+					{
+						"xImpulse": 0,
+						"yImpulse": 6
+					},
+					{
+						"xImpulse": 0,
+						"yImpulse": -15
+					}
+				],
+				"downAttackImpulseData": [
+					{
+						"xImpulse": -1,
+						"yImpulse": 6
+					},
+					{
+						"xImpulse": 0,
+						"yImpulse": 0
+					},
+					{
+						"xImpulse": 0,
+						"yImpulse": 0
+					},
+					{
+						"xImpulse": 0,
+						"yImpulse": 0
+					},
+					{
+						"xImpulse": 0,
+						"yImpulse": 0
+					}
+
+				]
+			},
+			"frameData": {
+				"sideAttackFrames": {
+					"startFrames": [ 7, 8 ],
+					"endFrames": [ 9, 10 ]
+				},
+				"upAttackFrames": {
+					"startFrames": [ 7, 8 ],
+					"endFrames": [ 9, 10 ]
+				},
+				"downAttackFrames": {
+					"startFrames": [ 6 ],
+					"endFrames": [ 9 ]
+				}
+			},
+			"hitboxData": {
+				"sideAttackHitboxes": [
+					{
+						"xOffset": 15,
+						"yOffset": 27,
+						"width": 55,
+						"height": 9,
+						"xKnockback": 12,
+						"yKnockback": 8,
+						"hitstun": 25
+					},
+					{
+						"xOffset": -11,
+						"yOffset": 29,
+						"width": 14,
+						"height": 20,
+						"xKnockback": -2,
+						"yKnockback": 12,
 						"hitstun": 20
 					}
 				],
 				"upAttackHitboxes": [
 					{
-						"xOffset": -30,
-						"yOffset": 57,
-						"width": 54,
-						"height": 45,
-						"xKnockback": 0,
-						"yKnockback": 10,
+						"xOffset": -18,
+						"yOffset": 63,
+						"width": 28,
+						"height": 28,
+						"xKnockback": 5,
+						"yKnockback": 15,
 						"hitstun": 20
+					},
+					{
+						"xOffset": -12,
+						"yOffset": 17,
+						"width": 22,
+						"height": 9,
+						"xKnockback": -1,
+						"yKnockback": -13,
+						"hitstun": 15
 					}
 				],
 				"downAttackHitboxes": [
 					{
-						"xOffset": 8,
-						"yOffset": 27,
-						"width": 7,
-						"height": 27,
-						"xKnockback": 0,
-						"yKnockback": -3,
-						"hitstun": 15
-					},
-					{
-						"xOffset": 8,
-						"yOffset": 27,
-						"width": 7,
-						"height": 27,
-						"xKnockback": 0,
-						"yKnockback": 8,
-						"hitstun": 30
+						"xOffset": 32,
+						"yOffset": -12,
+						"width": 17,
+						"height": 13,
+						"xKnockback": -1,
+						"yKnockback": 10,
+						"hitstun": 45
 					}
 				]
 			},
 			"hurtboxData": {
 				"idleHurtbox": {
 					"xOffset": -7,
-					"yOffset": 38,
+					"yOffset": 32,
 					"width": 16,
-					"height": 37
+					"height": 31
 				},
 				"runHurtbox": {
 					"xOffset": -18,
@@ -128,16 +322,16 @@
 					"height": 31
 				},
 				"upAttackHurtbox": {
-					"xOffset": -7,
-					"yOffset": 33,
-					"width": 16,
-					"height": 32
+					"xOffset": -12,
+					"yOffset": 35,
+					"width": 25,
+					"height": 28
 				},
 				"downAttackHurtbox": {
-					"xOffset": -3,
+					"xOffset": -9,
 					"yOffset": 34,
-					"width": 11,
-					"height": 23
+					"width": 20,
+					"height": 31
 				},
 				"menuingHurtbox": {
 					"xOffset": 0,
@@ -153,7 +347,7 @@
 			"jumpForce": 12,
 			"maxHitboxes": 1,
 			"impulseFrames": {
-				"sideAttackImpulseFrames": [1],
+				"sideAttackImpulseFrames": [ 1 ],
 				"upAttackImpulseFrames": [],
 				"downAttackImpulseFrames": []
 			},
@@ -169,16 +363,16 @@
 			},
 			"frameData": {
 				"sideAttackFrames": {
-					"startFrames": [2],
-					"endFrames": [3]
+					"startFrames": [ 2 ],
+					"endFrames": [ 3 ]
 				},
 				"upAttackFrames": {
-					"startFrames": [2],
-					"endFrames": [3]
+					"startFrames": [ 2 ],
+					"endFrames": [ 3 ]
 				},
 				"downAttackFrames": {
-					"startFrames": [3],
-					"endFrames": [7]
+					"startFrames": [ 3 ],
+					"endFrames": [ 7 ]
 				}
 			},
 			"hitboxData": {
