@@ -55,7 +55,11 @@ PrefabInstance:
     - target: {fileID: 5158828487232072365, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -19884494, guid: b2eff32f0ffa5d241bbff7b694e38719, type: 3}
+      objectReference: {fileID: -1006051430, guid: 724ca95cf3f7ef44ea91b073343e6b28, type: 3}
+    - target: {fileID: 5158828487232072365, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8469901656146212063, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
       propertyPath: bugToSpawn
       value: 

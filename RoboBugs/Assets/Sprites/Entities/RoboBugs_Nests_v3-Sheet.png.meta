@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2eff32f0ffa5d241bbff7b694e38719
+guid: 724ca95cf3f7ef44ea91b073343e6b28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RoboBugs_Nests_v2-Sheet_0
+      name: RoboBugs_Nests_v3-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f9b0a22d0bcbba428a6019b5427e7d6
-      internalID: 60875028
+      spriteID: 48a97fb7b9fb0f6409ce13e1ab612263
+      internalID: 75751917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RoboBugs_Nests_v2-Sheet_1
+      name: RoboBugs_Nests_v3-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0874fe0ea55f50a44b99937491b09e2e
-      internalID: -1747841161
+      spriteID: 6ad3e6c97e82e60469041c4a4bd85d03
+      internalID: 886434739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RoboBugs_Nests_v2-Sheet_2
+      name: RoboBugs_Nests_v3-Sheet_2
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81570d093195b7e49b8a17e0c2d3d59d
-      internalID: -19884494
+      spriteID: b08cb1c75228ec345b624db61b7c83cd
+      internalID: -1006051430
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RoboBugs_Nests_v2-Sheet_0: 60875028
-      RoboBugs_Nests_v2-Sheet_1: -1747841161
-      RoboBugs_Nests_v2-Sheet_2: -19884494
+      RoboBugs_Nests_v3-Sheet_0: 75751917
+      RoboBugs_Nests_v3-Sheet_1: 886434739
+      RoboBugs_Nests_v3-Sheet_2: -1006051430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
