@@ -3457,7 +3457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: damagedForce
-      value: 300
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.b
@@ -6860,7 +6860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1823459147698430803, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_GravityScale
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: BugType
@@ -6872,7 +6872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: damagedForce
-      value: 650
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: startingDirection
@@ -6949,7 +6949,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1823459147698430803, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_GravityScale
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.x

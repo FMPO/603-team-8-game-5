@@ -202,7 +202,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 15
+  m_GravityScale: 24
   m_Material: {fileID: 6200000, guid: 4bc713e77631c6440ac5a6b2f91de585, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -236,7 +236,7 @@ MonoBehaviour:
   leftLedgeTransform: {fileID: 8177625567698323118}
   rightLedgeTransform: {fileID: 4774003761279028158}
   ledgeDetectionRange: 6
-  damagedForce: 500
+  damagedForce: 600
   slipperyMaterial: {fileID: 6200000, guid: 4bc713e77631c6440ac5a6b2f91de585, type: 2}
   bouncyMaterial: {fileID: 6200000, guid: e92c7365548644840a45ef4dd542620d, type: 2}
   rb: {fileID: 1823459147698430803}
