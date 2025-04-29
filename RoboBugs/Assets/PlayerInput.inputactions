@@ -385,17 +385,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b26190ac-3342-4112-844d-c29f94910b46",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "80a0abc7-5c8a-4919-8453-8073013e0dc6",
                     "path": "<HID::mayflash limited MAYFLASH GameCube Controller Adapter>/button8",
                     "interactions": "",
@@ -420,6 +409,17 @@
                     "name": "",
                     "id": "21fd3fcc-2456-4d9d-8f7d-dd9fa0872082",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1f7cafc-add5-4864-a788-fa6a4b4c9321",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
