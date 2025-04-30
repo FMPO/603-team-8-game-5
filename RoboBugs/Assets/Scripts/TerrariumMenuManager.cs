@@ -2,16 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TerrariumMenuManager : MonoBehaviour {
+	[SerializeField] private List<StorageSlot> atlasHUDSlots;
+	[SerializeField] private List<StorageSlot> prometheusHUDSlots;
 	[SerializeField] private List<StorageSlot> atlasUpgradeSlots;
 	[SerializeField] private List<StorageSlot> prometheusUpgradeSlots;
 	[SerializeField] private List<StorageSlot> storageSlots;
+	[SerializeField] private List<Sprite> _bugUISprites;
 	[SerializeField] private TextMeshProUGUI quotaText;
 	[SerializeField] private TextMeshProUGUI doorUnlockedText;
 	[SerializeField] private GameObject doorObject;
 	[Space]
+	[SerializeField] private Image heldBugImage;
+	[SerializeField] private BugType _heldBugType;
+	[SerializeField] private StorageSlot _heldFromStorageSlot;
+	[SerializeField] private StorageSlot _toStorageSlot;
+	[SerializeField] private bool _isHoldingBug;
+	[Space]
 	[SerializeField, Range(0, 50)] private int quota;
+
+	/// <summary>
+	/// Whether or not the player is currently holding a bug
+	/// </summary>
+	public bool IsHoldingBug {
+		get => _isHoldingBug;
+		set {
+			_isHoldingBug = value;
+
+			// Turn the image on or off based on if the player is holding a bug or not
+			heldBugImage.color = (_isHoldingBug ? Color.white : Color.clear);
+		}
+	}
+
+	/// <summary>
+	/// A list of the bug UI sprites
+	/// </summary>
+	public List<Sprite> BugUISprites => _bugUISprites;
+
+	/// <summary>
+	/// The current bug type that is held in the inventory
+	/// </summary>
+	public BugType HeldBugType {
+		get => _heldBugType;
+		set {
+			_heldBugType = value;
+
+			// Set the held bug image based on the type
+			heldBugImage.sprite = BugUISprites[(int) _heldBugType];
+		}
+	}
+
+	/// <summary>
+	/// The storage slot that the current held bug was taken from
+	/// </summary>
+	public StorageSlot HeldFromStorageSlot { get => _heldFromStorageSlot; set => _heldFromStorageSlot = value; }
+
+	/// <summary>
+	/// The storage slot that is currently being hovered over
+	/// </summary>
+	public StorageSlot ToStorageSlot { get => _toStorageSlot; set => _toStorageSlot = value; }
 
 	private void OnValidate ( ) {
 		// Find the door in the scene without having to manually drag the object each time
@@ -20,6 +71,16 @@ public class TerrariumMenuManager : MonoBehaviour {
 
 	private void Awake ( ) {
 		OnValidate( );
+
+		// Make sure the player is not holding a bug at the start of the game
+		IsHoldingBug = false;
+	}
+
+	private void Update ( ) {
+		// Have the held bug image follow the mouse
+		Vector2 localPosition;
+		RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, Input.mousePosition, Camera.main, out localPosition);
+		heldBugImage.rectTransform.anchoredPosition = localPosition;
 	}
 
 	/// <summary>
@@ -31,13 +92,13 @@ public class TerrariumMenuManager : MonoBehaviour {
 		storageSlots[(int) bugType].BugCount++;
 
 		// Update the quota text since the storage has been changed
-		UpdateQuotaText( );
+		UpdateEffects( );
 	}
 
 	/// <summary>
-	/// Update the quota text and unlock the door if the quota has been met
+	/// Update effects of the terrarium based on the equipped bugs
 	/// </summary>
-	private void UpdateQuotaText ( ) {
+	public void UpdateEffects ( ) {
 		// Get the total amount of bugs the player has collected
 		int totalBugs = storageSlots[(int) BugType.RED].BugCount + storageSlots[(int) BugType.YELLOW].BugCount + storageSlots[(int) BugType.BLUE].BugCount;
 
@@ -48,5 +109,23 @@ public class TerrariumMenuManager : MonoBehaviour {
 		bool hasCompletedQuota = (totalBugs >= quota);
 		doorUnlockedText.gameObject.SetActive(hasCompletedQuota);
 		doorObject.SetActive(!hasCompletedQuota);
+
+		// Update the player HUD
+		// Not the cleanest code but it'll do
+		atlasHUDSlots[0].BugType = atlasUpgradeSlots[0].BugType;
+		atlasHUDSlots[1].BugType = atlasUpgradeSlots[1].BugType;
+		atlasHUDSlots[2].BugType = atlasUpgradeSlots[2].BugType;
+		atlasHUDSlots[0].BugCount = atlasUpgradeSlots[0].BugCount;
+		atlasHUDSlots[1].BugCount = atlasUpgradeSlots[1].BugCount;
+		atlasHUDSlots[2].BugCount = atlasUpgradeSlots[2].BugCount;
+
+		prometheusHUDSlots[0].BugType = prometheusUpgradeSlots[0].BugType;
+		prometheusHUDSlots[1].BugType = prometheusUpgradeSlots[1].BugType;
+		prometheusHUDSlots[2].BugType = prometheusUpgradeSlots[2].BugType;
+		prometheusHUDSlots[0].BugCount = prometheusUpgradeSlots[0].BugCount;
+		prometheusHUDSlots[1].BugCount = prometheusUpgradeSlots[1].BugCount;
+		prometheusHUDSlots[2].BugCount = prometheusUpgradeSlots[2].BugCount;
+
+		/// TODO: Update other effects here (like adjusting character abilities)
 	}
 }

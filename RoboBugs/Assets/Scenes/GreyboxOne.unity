@@ -3134,6 +3134,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4004897009d25644ea3fca7f2810323c, type: 3}
+--- !u!114 &991310198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7068617340865617136, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+  m_PrefabInstance: {fileID: 169159564541071965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340ff97ebab22724a963df731179e2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1001620107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7602618141174604508, guid: a5efc79329f39a1478e2c331af36a42c, type: 3}
@@ -6083,6 +6094,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 792298505338551989, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 792298505338551989, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 991469840832058640, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6103,6 +6122,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1013310342352664284, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: keepImageOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013310342352664284, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013310342352664284, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerRemoveBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013310342352664284, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 1517971904846277372, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6118,6 +6153,10 @@ PrefabInstance:
     - target: {fileID: 1517971904846277372, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582499458628924301, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2079734428364068891, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6159,6 +6198,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2253303496008957493, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 53.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2925471649023648561, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_Name
       value: Game Menu Manager
@@ -6183,21 +6226,89 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3046341947579036420, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046341947579036420, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
+    - target: {fileID: 3092196363971550251, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092196363971550251, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
+    - target: {fileID: 3649148881374260829, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649148881374260829, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649148881374260829, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649148881374260829, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
+    - target: {fileID: 3733686056461127680, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763502537630237358, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763502537630237358, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763502537630237358, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763502537630237358, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
+    - target: {fileID: 3954285603323189626, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954285603323189626, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954285603323189626, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954285603323189626, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 4010092682919819614, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010092682919819614, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010092682919819614, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 320.36108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010092682919819614, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4079709302365863700, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6289,7 +6400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458855791599308189, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4587476545816385439, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6347,6 +6458,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969458042408453480, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969458042408453480, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 5010077889099028264, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6367,21 +6486,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5149310888297070704, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149310888297070704, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149310888297070704, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149310888297070704, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 5190415023050827802, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5190415023050827802, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5190415023050827802, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 961.0831
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5190415023050827802, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5226614471478127508, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6535,54 +6670,110 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763175194896300364, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499207377802793602, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: keepImageOn
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchorMin.y
+    - target: {fileID: 6499207377802793602, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1601.8053
+    - target: {fileID: 6499207377802793602, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerRemoveBug
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5837206375691700260, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -540
+    - target: {fileID: 6499207377802793602, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
+    - target: {fileID: 6532444176352805572, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: keepImageOn
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 6532444176352805572, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
+    - target: {fileID: 6532444176352805572, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerRemoveBug
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014661755385404519, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6047889052794047521, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 6532444176352805572, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 6543546139692094351, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6603,6 +6794,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6587216179807411170, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrarium
+      value: 
+      objectReference: {fileID: 1001620107}
     - target: {fileID: 7068617340865617136, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: doorObject
       value: 
@@ -6627,6 +6822,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7531767418307688193, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531767418307688193, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 7553125900810266315, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6683,6 +6886,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7985927353853945897, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985927353853945897, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 8062913883401465084, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6791,6 +7002,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8682667346661997399, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682667346661997399, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682667346661997399, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682667346661997399, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 8800125168339285272, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6811,6 +7038,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8803014933377663846, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: _maxBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803014933377663846, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803014933377663846, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: CanOverwriteBugType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803014933377663846, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
+      propertyPath: terrariumMenuManager
+      value: 
+      objectReference: {fileID: 991310198}
     - target: {fileID: 8959345620207536833, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

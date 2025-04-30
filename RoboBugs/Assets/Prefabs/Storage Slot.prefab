@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 5430081497403050307}
   - component: {fileID: 7338148134314004624}
   - component: {fileID: 8925913331546445357}
+  - component: {fileID: 6580773609824189605}
   - component: {fileID: 4760878789795645350}
   m_Layer: 5
   m_Name: Storage Slot
@@ -212,6 +213,83 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6580773609824189605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229157454020009818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4760878789795645350}
+          m_TargetAssemblyTypeName: StorageSlot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4760878789795645350}
+          m_TargetAssemblyTypeName: StorageSlot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4760878789795645350}
+          m_TargetAssemblyTypeName: StorageSlot, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4760878789795645350}
+          m_TargetAssemblyTypeName: StorageSlot, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4760878789795645350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,17 +304,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bugImage: {fileID: 5685406920251500794}
   bugCountText: {fileID: 533271053707569937}
-  bugSprites:
-  - {fileID: -1936413037, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
-  - {fileID: 939680771, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
-  - {fileID: -1878564921, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  terrariumMenuManager: {fileID: 0}
   _bugType: 0
   _bugCount: 0
   _hasBug: 1
   _hideBugCount: 0
-  canPlayerPlaceBug: 0
-  canPlayerRemoveBug: 0
-  canOverwriteBugType: 0
+  _maxBugCount: 999
+  CanPlayerPlaceBug: 0
+  CanPlayerRemoveBug: 0
+  CanOverwriteBugType: 0
 --- !u!1 &7550336605607923712
 GameObject:
   m_ObjectHideFlags: 0
