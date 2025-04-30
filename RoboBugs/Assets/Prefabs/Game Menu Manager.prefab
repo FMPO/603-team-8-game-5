@@ -671,6 +671,81 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1582499458628924301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5763175194896300364}
+  - component: {fileID: 4226215405883529991}
+  - component: {fileID: 3733686056461127680}
+  m_Layer: 5
+  m_Name: HeldBug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5763175194896300364
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582499458628924301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5653308538473321099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4226215405883529991
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582499458628924301}
+  m_CullTransparentMesh: 1
+--- !u!114 &3733686056461127680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582499458628924301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1663967260972460173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2011,7 @@ RectTransform:
   m_Children:
   - {fileID: 4533076955964347109}
   - {fileID: 4187883999174125755}
+  - {fileID: 5763175194896300364}
   m_Father: {fileID: 5451667440983491979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3927,6 +4003,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340ff97ebab22724a963df731179e2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atlasHUDSlots:
+  - {fileID: 792298505338551989}
+  - {fileID: 7985927353853945897}
+  - {fileID: 7531767418307688193}
+  prometheusHUDSlots:
+  - {fileID: 4969458042408453480}
+  - {fileID: 3092196363971550251}
+  - {fileID: 3046341947579036420}
   atlasUpgradeSlots:
   - {fileID: 8803014933377663846}
   - {fileID: 8682667346661997399}
@@ -3939,8 +4023,18 @@ MonoBehaviour:
   - {fileID: 6499207377802793602}
   - {fileID: 6532444176352805572}
   - {fileID: 1013310342352664284}
+  _bugUISprites:
+  - {fileID: -1936413037, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  - {fileID: 939680771, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+  - {fileID: -1878564921, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
   quotaText: {fileID: 7803383372042235371}
   doorUnlockedText: {fileID: 7001627972680085015}
+  doorObject: {fileID: 0}
+  heldBugImage: {fileID: 3733686056461127680}
+  _heldBugType: 0
+  _heldFromStorageSlot: {fileID: 0}
+  _toStorageSlot: {fileID: 0}
+  _isHoldingBug: 0
   quota: 20
 --- !u!1 &8573225557047503036
 GameObject:
@@ -4767,6 +4861,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: canOverwriteBugType
       value: 1
       objectReference: {fileID: 0}
@@ -4856,7 +4954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (3)
+      value: Prometheus Storage Slot (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4977,13 +5075,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (1)
+      value: Prometheus Storage Slot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+--- !u!114 &4969458042408453480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 496809700705223374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5602059642095111053 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -5012,6 +5121,10 @@ PrefabInstance:
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: canPlayerRemoveBug
@@ -5141,6 +5254,10 @@ PrefabInstance:
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: canPlayerRemoveBug
@@ -5353,7 +5470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (3)
+      value: Atlas Storage Slot (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5365,6 +5482,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
   m_PrefabInstance: {fileID: 3068143797325082791}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7531767418307688193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 3068143797325082791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3225066156393770895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5463,7 +5591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (2)
+      value: Atlas Storage Slot (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5475,6 +5603,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
   m_PrefabInstance: {fileID: 3225066156393770895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7985927353853945897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 3225066156393770895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4051161011931661504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5493,6 +5632,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -5585,7 +5728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (1)
+      value: Atlas Storage Slot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5626,6 +5769,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -5718,7 +5865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (2)
+      value: Atlas Storage Slot (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5839,7 +5986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (1)
+      value: Atlas Storage Slot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5851,6 +5998,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
   m_PrefabInstance: {fileID: 5254791752672409875}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &792298505338551989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 5254791752672409875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5476951554858611066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5870,6 +6028,10 @@ PrefabInstance:
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: canPlayerRemoveBug
@@ -6082,7 +6244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (3)
+      value: Prometheus Storage Slot (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6094,6 +6256,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
   m_PrefabInstance: {fileID: 7517859990781555874}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3046341947579036420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 7517859990781555874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7564844771432291213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6192,7 +6365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (2)
+      value: Prometheus Storage Slot (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6204,6 +6377,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5430081497403050307, guid: e270a21c4173801429408f7b444e88ca, type: 3}
   m_PrefabInstance: {fileID: 7564844771432291213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3092196363971550251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+  m_PrefabInstance: {fileID: 7564844771432291213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccdfcbb41649e54ab33cdab47184109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8121797287893903867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6222,6 +6406,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -6314,7 +6502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (1)
+      value: Prometheus Storage Slot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6355,6 +6543,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -6447,7 +6639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (3)
+      value: Atlas Storage Slot (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6488,6 +6680,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: _hideBugCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
+      propertyPath: canPlayerPlaceBug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760878789795645350, guid: e270a21c4173801429408f7b444e88ca, type: 3}
@@ -6580,7 +6776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229157454020009818, guid: e270a21c4173801429408f7b444e88ca, type: 3}
       propertyPath: m_Name
-      value: Storage Slot (2)
+      value: Prometheus Storage Slot (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
