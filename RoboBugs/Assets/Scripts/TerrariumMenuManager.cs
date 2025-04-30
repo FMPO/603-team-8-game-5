@@ -9,8 +9,18 @@ public class TerrariumMenuManager : MonoBehaviour {
 	[SerializeField] private List<StorageSlot> storageSlots;
 	[SerializeField] private TextMeshProUGUI quotaText;
 	[SerializeField] private TextMeshProUGUI doorUnlockedText;
+	[SerializeField] private GameObject doorObject;
 	[Space]
 	[SerializeField, Range(0, 50)] private int quota;
+
+	private void OnValidate ( ) {
+		// Find the door in the scene without having to manually drag the object each time
+		doorObject = GameObject.Find("Door");
+	}
+
+	private void Awake ( ) {
+		OnValidate( );
+	}
 
 	/// <summary>
 	/// Add a bug of a specific type to the storage
@@ -35,8 +45,8 @@ public class TerrariumMenuManager : MonoBehaviour {
 		quotaText.text = $"Bug Goal: {totalBugs} / {quota}";
 
 		// If the player has reached the quota, unlock the door
-		if (totalBugs >= quota) {
-			doorUnlockedText.gameObject.SetActive(true);
-		}
+		bool hasCompletedQuota = (totalBugs >= quota);
+		doorUnlockedText.gameObject.SetActive(hasCompletedQuota);
+		doorObject.SetActive(!hasCompletedQuota);
 	}
 }

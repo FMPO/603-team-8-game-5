@@ -12,17 +12,29 @@ PrefabInstance:
       propertyPath: BugType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: movingSprite
+      value: 
+      objectReference: {fileID: -346396349, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+    - target: {fileID: 3593621587763822047, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: stunnedSprite
+      value: 
+      objectReference: {fileID: -1878564921, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
+    - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -346396349, guid: 23a449dad44f5b2468f09c8d63db166b, type: 3}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.g
-      value: 0.07194328
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3700614967901195281, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3889851476858486526, guid: 6beff2882703d4b488e66d17ca95875d, type: 3}
       propertyPath: m_LocalPosition.x
