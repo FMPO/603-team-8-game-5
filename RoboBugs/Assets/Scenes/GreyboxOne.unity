@@ -7151,6 +7151,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3901085550024604217, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
+      propertyPath: m_Size.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901085550024604217, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
+      propertyPath: m_Size.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901085550024604217, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
+      propertyPath: m_Offset.x
+      value: -300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
