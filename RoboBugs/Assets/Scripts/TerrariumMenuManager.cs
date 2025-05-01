@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class TerrariumMenuManager : MonoBehaviour {
 	[SerializeField] private List<StorageSlot> atlasHUDSlots;
 	[SerializeField] private List<StorageSlot> prometheusHUDSlots;
-	[SerializeField] private List<StorageSlot> atlasUpgradeSlots;
-	[SerializeField] private List<StorageSlot> prometheusUpgradeSlots;
+	[SerializeField] public List<StorageSlot> AtlasUpgradeSlots;
+	[SerializeField] public List<StorageSlot> PrometheusUpgradeSlots;
 	[SerializeField] private List<StorageSlot> storageSlots;
 	[SerializeField] private List<Sprite> _bugUISprites;
 	[SerializeField] private TextMeshProUGUI quotaText;
@@ -112,19 +112,22 @@ public class TerrariumMenuManager : MonoBehaviour {
 
 		// Update the player HUD
 		// Not the cleanest code but it'll do
-		atlasHUDSlots[0].BugType = atlasUpgradeSlots[0].BugType;
-		atlasHUDSlots[1].BugType = atlasUpgradeSlots[1].BugType;
-		atlasHUDSlots[2].BugType = atlasUpgradeSlots[2].BugType;
-		atlasHUDSlots[0].BugCount = atlasUpgradeSlots[0].BugCount;
-		atlasHUDSlots[1].BugCount = atlasUpgradeSlots[1].BugCount;
-		atlasHUDSlots[2].BugCount = atlasUpgradeSlots[2].BugCount;
+		atlasHUDSlots[0].BugType = AtlasUpgradeSlots[0].BugType;
+		atlasHUDSlots[1].BugType = AtlasUpgradeSlots[1].BugType;
+		atlasHUDSlots[2].BugType = AtlasUpgradeSlots[2].BugType;
+		atlasHUDSlots[0].BugCount = AtlasUpgradeSlots[0].BugCount;
+		atlasHUDSlots[1].BugCount = AtlasUpgradeSlots[1].BugCount;
+		atlasHUDSlots[2].BugCount = AtlasUpgradeSlots[2].BugCount;
 
-		prometheusHUDSlots[0].BugType = prometheusUpgradeSlots[0].BugType;
-		prometheusHUDSlots[1].BugType = prometheusUpgradeSlots[1].BugType;
-		prometheusHUDSlots[2].BugType = prometheusUpgradeSlots[2].BugType;
-		prometheusHUDSlots[0].BugCount = prometheusUpgradeSlots[0].BugCount;
-		prometheusHUDSlots[1].BugCount = prometheusUpgradeSlots[1].BugCount;
-		prometheusHUDSlots[2].BugCount = prometheusUpgradeSlots[2].BugCount;
+		prometheusHUDSlots[0].BugType = PrometheusUpgradeSlots[0].BugType;
+		prometheusHUDSlots[1].BugType = PrometheusUpgradeSlots[1].BugType;
+		prometheusHUDSlots[2].BugType = PrometheusUpgradeSlots[2].BugType;
+		prometheusHUDSlots[0].BugCount = PrometheusUpgradeSlots[0].BugCount;
+		prometheusHUDSlots[1].BugCount = PrometheusUpgradeSlots[1].BugCount;
+		prometheusHUDSlots[2].BugCount = PrometheusUpgradeSlots[2].BugCount;
+
+		// Update the data tracker to include the new layout
+		FindObjectOfType<DataTracker>( ).UpdateCurrentLoadoutString( );
 
 		/// TODO: Update other effects here (like adjusting character abilities)
 	}

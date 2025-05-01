@@ -7,7 +7,7 @@ public enum GameMenuState {
 	PAUSED, PLAY, TERRARIUM
 }
 
-public class GameMenuManager : MonoBehaviour {
+public class GameMenuManager : Singleton<GameMenuManager> {
 	[SerializeField] private GameObject pauseMenu;
 	[SerializeField] private GameObject terrariumMenu;
 	[SerializeField] private GameObject playerHUD;
@@ -37,7 +37,9 @@ public class GameMenuManager : MonoBehaviour {
 		terrarium = FindObjectOfType<Terrarium>( );
 	}
 
-	private void Awake ( ) {
+	protected override void Awake ( ) {
+		base.Awake( );
+
 		OnValidate( );
 	}
 

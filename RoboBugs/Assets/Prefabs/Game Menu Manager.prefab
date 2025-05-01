@@ -4011,11 +4011,11 @@ MonoBehaviour:
   - {fileID: 4969458042408453480}
   - {fileID: 3092196363971550251}
   - {fileID: 3046341947579036420}
-  atlasUpgradeSlots:
+  AtlasUpgradeSlots:
   - {fileID: 8803014933377663846}
   - {fileID: 8682667346661997399}
   - {fileID: 3954285603323189626}
-  prometheusUpgradeSlots:
+  PrometheusUpgradeSlots:
   - {fileID: 3649148881374260829}
   - {fileID: 3763502537630237358}
   - {fileID: 5149310888297070704}
