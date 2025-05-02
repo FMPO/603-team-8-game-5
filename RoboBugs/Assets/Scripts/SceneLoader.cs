@@ -15,6 +15,6 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToGameplay()
     {
-        SceneManager.LoadScene("GreyboxOne");
+        SceneManager.LoadScene("LevelOne");
     }
 }

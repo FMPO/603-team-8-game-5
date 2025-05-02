@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1bde985276dc33642a245663188fe6c0
   - enabled: 1
-    path: Assets/Scenes/GreyboxOne.unity
+    path: Assets/Scenes/LevelOne.unity
     guid: 147dc86b8d08c894584ef43fdab45bd1
   - enabled: 1
-    path: Assets/Scenes/gameplayTesting.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/LevelTwo.unity
+    guid: c1add77ddf7661c4ab2935b80378f8ad
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: b294fab86fae8244aa85dce1ef5f7ab6
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 19d6d0cac4d8bbb469ed673f36fd8761
   m_configObjects: {}

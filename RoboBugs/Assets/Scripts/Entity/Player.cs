@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     //Player fields
     public int runSpeed = 3;
-    public int jumpForce = 10;
+    public int jumpForce = 12;
     public int punchForce = 1;
     public int gravity = 1;
     private int gravityModCounter = 0;
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
 
         //reset the stats and bug counts allowed for the players
         runSpeed = 3;
-        jumpForce = 10;
+        jumpForce = 12;
         punchForce = 1;
         atlasAllowedGadgetCounts = new int[] { 0, 0, 0 };
 

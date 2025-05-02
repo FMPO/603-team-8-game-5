@@ -9,7 +9,7 @@ public class SceneChangeTrigger : MonoBehaviour {
 	private void OnTriggerEnter2D (Collider2D collision) {
 		// If the player collides with the trigger, then load the scene with the specified build index
 		if (collision.CompareTag("Player")) {
-			FindAnyObjectByType<DataTracker>( ).SaveDataToFile( );
+			//FindAnyObjectByType<DataTracker>( ).SaveDataToFile( );
 
 			SceneManager.LoadScene(loadSceneBuildIndex);
 		}
