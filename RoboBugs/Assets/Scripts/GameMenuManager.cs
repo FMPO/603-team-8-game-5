@@ -11,7 +11,7 @@ public class GameMenuManager : Singleton<GameMenuManager> {
 	[SerializeField] private GameObject pauseMenu;
 	[SerializeField] private GameObject terrariumMenu;
 	[SerializeField] private GameObject playerHUD;
-	[SerializeField] private Terrarium terrarium;
+	[SerializeField] public Terrarium terrarium;
 	[Space]
 	[SerializeField] private GameMenuState _gameMenuState;
 

@@ -91,7 +91,7 @@ public class Hurtbox : MonoBehaviour
 
                 //apply a force to the bug in a direction based on the player's attack direction
                 Vector2 knockBackDirection = new Vector2(hitHitbox.xKnockback * (hitPlayer.facingRight ? 1 : -1), hitHitbox.yKnockback);
-                hurtBug.rb.AddForce(knockBackDirection.normalized * hurtBug.damagedForce, ForceMode2D.Impulse);
+                hurtBug.rb.AddForce(knockBackDirection.normalized * hurtBug.damagedForce * (1f + (float)hitPlayer.punchForce/10), ForceMode2D.Impulse);
                 //Debug.Log("Knockback by: " + knockBackDirection.normalized * hurtBug.damagedForce);
 
                 //generate the location of the hit or block spark

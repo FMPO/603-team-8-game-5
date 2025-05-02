@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     //Player fields
     public int runSpeed = 3;
     public int jumpForce = 10;
+    public int punchForce = 1;
     public int gravity = 1;
     private int gravityModCounter = 0;
     public int gravityModifier = 1;
@@ -75,7 +76,9 @@ public class Player : MonoBehaviour
     public float invincibilityTime = 1f;
     public float invincibilityCounter = 0;
 
-
+    public BugType[] promethiusEquippedBugs = new BugType[] { BugType.NONE, BugType.NONE, BugType.NONE};
+    public BugType[] atlasEquippedBugs = new BugType[] { BugType.NONE, BugType.NONE, BugType.NONE };
+    public int[] atlasAllowedGadgetCounts = new int[] { 0, 0, 0 };
 
     private float tempHspd = 0;
     public int hitstopVal = 0;
@@ -166,7 +169,60 @@ public class Player : MonoBehaviour
         grounded = IsGrounded();
         touchingWall = IsTouchingWall();
 
+        //update bug inventories for both players
+        UpdateBugInventories();
 
+        //reset the stats and bug counts allowed for the players
+        runSpeed = 3;
+        jumpForce = 10;
+        punchForce = 1;
+        atlasAllowedGadgetCounts = new int[] { 0, 0, 0 };
+
+        if (characterId == 0) //if the current character is promethius, alter the stats
+        {
+            //update the player stats for promethius
+
+            for (int i = 0; i < promethiusEquippedBugs.Length; i++)
+            {
+                switch(promethiusEquippedBugs[i])
+                {
+                    case BugType.RED:
+                        jumpForce += 2;
+                        break;
+                    case BugType.YELLOW:
+                        runSpeed += 2;
+                        break;
+                    case BugType.BLUE:
+                        punchForce += 2;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        else // if the current player is atlas, edit the allowed gadget counts
+        {
+            for (int i = 0; i < atlasEquippedBugs.Length; i++)
+            {
+                switch (atlasEquippedBugs[i])
+                {
+                    case BugType.RED:
+                        atlasAllowedGadgetCounts[0] ++;
+                        break;
+                    case BugType.YELLOW:
+                        atlasAllowedGadgetCounts[1]++;
+                        break;
+                    case BugType.BLUE:
+                        atlasAllowedGadgetCounts[2]++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        {
+
+        }
 
         //re-update weapon stats when pause is pressed
         if (Input.GetKey(KeyCode.F1))
@@ -1541,6 +1597,35 @@ public class Player : MonoBehaviour
             hitbox.GetComponent<Hitbox>().ignorePlayers.Clear();
         }
 
+    }
+
+
+    public void UpdateBugInventories()
+    {
+        TerrariumMenuManager tempTMM = GameMenuManager.Instance.terrarium.terrariumMenuManager;
+        for(int i = 0; i < tempTMM.AtlasUpgradeSlots.Count; i++)
+        {
+            if (tempTMM.AtlasUpgradeSlots[i].HasBug)
+            {
+                atlasEquippedBugs[i] = tempTMM.AtlasUpgradeSlots[i].BugType;
+            }
+            else
+            {
+
+               atlasEquippedBugs[i] = BugType.NONE;
+            }
+
+            if (tempTMM.PrometheusUpgradeSlots[i].HasBug)
+            {
+                promethiusEquippedBugs[i] = tempTMM.PrometheusUpgradeSlots[i].BugType;
+            }
+            else
+            {
+
+                promethiusEquippedBugs[i] = BugType.NONE;
+            }
+
+        }
     }
 
     //public void TakeDamage(GameObject hitPlayer, int damage, int xKnockback, int yKnockback, int hitstun, Vector2 hitsparkSpawnPoint, Texture targetTexture)

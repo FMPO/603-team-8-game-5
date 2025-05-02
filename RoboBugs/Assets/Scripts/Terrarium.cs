@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class Terrarium : MonoBehaviour {
-	[SerializeField] private TerrariumMenuManager terrariumMenuManager;
+	[SerializeField] public TerrariumMenuManager terrariumMenuManager;
 	[SerializeField] private GameObject interactCanvas;
 	[SerializeField] private bool _isPlayerNear;
 

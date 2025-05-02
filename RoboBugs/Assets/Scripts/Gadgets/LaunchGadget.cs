@@ -40,23 +40,9 @@ public class LaunchGadget : MonoBehaviour
         //If this is when the context has started, it proceeds.
         if (context.phase.ToString() == "Started" && Time.timeScale != 0)
         {
-            int gadgetCount = 0;
+            int[] gadgetCount = new int[] { 0, 0, 0 };
 
-            //Iterates for each gadget in the world.
-            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
-            {
-                gadgetCount++;
-            }
-
-            //If there are more than three, destroy the oldest one until only three are left.
-            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
-            {
-                if (gadgetCount >= 3)
-                {
-                    Destroy(n);
-                    gadgetCount--;
-                }
-            }
+            
 
             /*Calculates the adjacent and opposite sides of a right triangle, using the player 
             and mouse position before calculating the angle*/
@@ -83,6 +69,60 @@ public class LaunchGadget : MonoBehaviour
             //Creates the thrown gadget and adds force in the forward direction.
             GameObject thrown = Instantiate(thrownObjects[gadgetIndex], newOrigin, Quaternion.Euler(0, 0, angle - 90));
             thrown.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            //Iterates for each gadget in the world.
+            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
+            {
+                string name = n.name;
+                if (name.Contains("Bumper"))
+                {
+                    //If the name contains "Bumper", it counts as a gadget.
+                    gadgetCount[0]++;
+                }
+                else if (name.Contains("Slime"))
+                {
+                    gadgetCount[1]++;
+                }
+                else if (name.Contains("Fan"))
+                {
+                    gadgetCount[2]++;
+                }
+            }
+
+            //If there are more than three, destroy the oldest one until only three are left.
+            foreach (GameObject n in GameObject.FindGameObjectsWithTag("Bumper"))
+            {
+                //if (gadgetCount >= 3)
+                //{
+                //    Destroy(n);
+                //    gadgetCount--;
+                //}
+                string name = n.name;
+                if (name.Contains("Bumper"))
+                {
+                    //If the name contains "Bumper", it counts as a gadget.
+                    if (gadgetCount[0] > player.atlasAllowedGadgetCounts[0])
+                    {
+                        Destroy(n);
+                        gadgetCount[0]--;
+                    }
+                }
+                else if (name.Contains("Slime"))
+                {
+                    if (gadgetCount[1] > player.atlasAllowedGadgetCounts[1])
+                    {
+                        Destroy(n);
+                        gadgetCount[1]--;
+                    }
+                }
+                else if (name.Contains("Fan"))
+                {
+                    if (gadgetCount[2] > player.atlasAllowedGadgetCounts[2])
+                    {
+                        Destroy(n);
+                        gadgetCount[2]--;
+                    }
+                }
+            }
         }
     }
 

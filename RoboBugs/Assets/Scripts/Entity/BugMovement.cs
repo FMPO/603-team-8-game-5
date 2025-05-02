@@ -8,7 +8,7 @@ enum BugMovementType
 };
 
 public enum BugType {
-    RED, YELLOW, BLUE
+    RED, YELLOW, BLUE, NONE
 }
 
 enum BugMovementDirection
