@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChangeTrigger : MonoBehaviour {
-	[SerializeField] private BoxCollider2D triggerCollider;
 	[SerializeField] private int loadSceneBuildIndex;
 
 	private void OnTriggerEnter2D (Collider2D collision) {

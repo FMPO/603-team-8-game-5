@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataTracker : MonoBehaviour {
 	[SerializeField] private Player player;
@@ -40,7 +41,7 @@ public class DataTracker : MonoBehaviour {
 
 	private void Update ( ) {
 		// If the player is playing as atlas, then increase the atlas playtime
-		if (player.characterSwapFlag) {
+		if (!player.characterSwapFlag) {
 			atlasPlaytime += Time.deltaTime;
 		}
 
@@ -52,21 +53,65 @@ public class DataTracker : MonoBehaviour {
 	/// Save all of the data collected to a file
 	/// </summary>
 	public void SaveDataToFile ( ) {
-		using (StreamWriter sw = new StreamWriter($"{Application.dataPath}/{DateTime.Now.ToString( ).Replace("/", "-").Replace(":", "-").Replace(" ", "-")}.txt", true)) {
+		// Variables that hold the data that was read from the file
+		Dictionary<string, float> readLoadoutValues = new Dictionary<string, float>( );
+		float readAtlasTime = 0f;
+		float readPrometheusTime = 0f;
+		string filePath = $"{Application.dataPath}/PlayerData-{SceneManager.GetActiveScene( ).name}.txt";
+
+		// If the text file does not exist, then create a new one
+		if (!File.Exists(filePath)) {
+			File.Create(filePath);
+		}
+
+		// Read old accumulated values from the file
+		using (StreamReader sr = new StreamReader(filePath)) {
+			// Read the current line
+			string[ ] line = sr.ReadLine( ).Split("");
+
+			// Read values from the file
+			// A > indicates a loadout, and an = indicates a character playtime
+			if (line[0] == ">") {
+				readLoadoutValues.Add(line[1], float.Parse(line[2].Replace("s", "")));
+			} else if (line[0] == "=") {
+				if (line[1] == "Atlas") {
+					readAtlasTime = float.Parse(line[2].Replace("s", ""));
+				} else if (line[1] == "Prometheus") {
+					readPrometheusTime = float.Parse(line[2].Replace("s", ""));
+				}
+			}
+		}
+
+		// Add in the times from this level
+		foreach (KeyValuePair<string, float> loadout in BugLoadoutTimes) {
+			if (!readLoadoutValues.ContainsKey(loadout.Key)) {
+				readLoadoutValues.Add(loadout.Key, loadout.Value);
+			} else {
+				readLoadoutValues[loadout.Key] += loadout.Value;
+			}
+		}
+
+		// Clear the file so we can write to it again
+		File.WriteAllText(filePath, String.Empty);
+
+		// Write new values to the file
+		using (StreamWriter sw = new StreamWriter(filePath, true)) {
 			// Write all of the loadouts sorted into time order
-			sw.WriteLine("Amount of time each bug loadout was used: ");
-			foreach (KeyValuePair<string, float> loadout in BugLoadoutTimes) {
-				sw.WriteLine($"> {loadout.Key} - {loadout.Value:0.0}s");
+			sw.WriteLine("Amount of time each bug loadout was used:");
+			foreach (KeyValuePair<string, float> loadout in readLoadoutValues) {
+				sw.WriteLine($"> {loadout.Key} {loadout.Value:0.0}s");
 			}
 			sw.WriteLine("E - Empty, R - Red Bug, Y - Yellow Bug, B - Blue Bug");
 			sw.WriteLine("Formatted as AAA-PPP, where A is Atlas's bugs and P is Prometheus' bugs\n");
 
 			// Write the playtime of each character
 			float prometheusPlaytime = Time.timeSinceLevelLoad - atlasPlaytime;
-			sw.WriteLine($"Atlas Playtime: {atlasPlaytime:0.0}s ({(atlasPlaytime / Time.timeSinceLevelLoad):0.00}%)");
-			sw.WriteLine($"Atlas Playtime: {prometheusPlaytime:0.0}s ({(prometheusPlaytime / Time.timeSinceLevelLoad):0.00}%)\n");
-
-			// Based on the data, write an interpretation about how the player likes to play
+			float toalPlaytime = readAtlasTime + readPrometheusTime + Time.timeSinceLevelLoad;
+			atlasPlaytime += readAtlasTime;
+			prometheusPlaytime += readPrometheusTime;
+			sw.WriteLine("Amount of time each character was used:");
+			sw.WriteLine($"= Prometheus {atlasPlaytime:0.0}s ({(atlasPlaytime / toalPlaytime * 100f):0.00}%)");
+			sw.WriteLine($"= Atlas {prometheusPlaytime:0.0}s ({(prometheusPlaytime / toalPlaytime * 100f):0.00}%)\n");
 		}
 	}
 
