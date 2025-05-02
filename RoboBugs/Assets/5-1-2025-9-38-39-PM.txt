@@ -1,0 +1,8 @@
+Amount of time each bug loadout was used: 
+> EEE-EEE - 42.0s
+E - Empty, R - Red Bug, Y - Yellow Bug, B - Blue Bug
+Formatted as AAA-PPP, where A is Atlas's bugs and P is Prometheus' bugs
+
+Atlas Playtime: 0.0s (0.00%)
+Atlas Playtime: 42.0s (1.00%)
+
