@@ -40,7 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
             Destroy(gameObject);
 
             //If this isn't a slime, place normally.
-            if (!gameObject.name.Contains("Slime"))
+            if (!gameObject.name.Contains("Slime") || gameObject.name.Contains("Slime"))
             {
                 Instantiate(placedGadget, gameObject.transform.position, gameObject.transform.rotation);
             }
