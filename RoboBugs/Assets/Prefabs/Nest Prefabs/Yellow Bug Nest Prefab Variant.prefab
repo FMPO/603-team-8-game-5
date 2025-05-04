@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5526679292724659349, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526679292724659349, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 886434739, guid: 724ca95cf3f7ef44ea91b073343e6b28, type: 3}
+    - target: {fileID: 5526679292724659349, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8469901656146212063, guid: db5a47352c9e96b4d96fc23d09919399, type: 3}
       propertyPath: bugToSpawn
       value: 
