@@ -173,8 +173,8 @@ public class Player : MonoBehaviour
         UpdateBugInventories();
 
         //reset the stats and bug counts allowed for the players
-        runSpeed = 3;
-        jumpForce = 10;
+        runSpeed = 4;
+        jumpForce = 11;
         punchForce = 1;
         atlasAllowedGadgetCounts = new int[] { 0, 0, 0 };
 

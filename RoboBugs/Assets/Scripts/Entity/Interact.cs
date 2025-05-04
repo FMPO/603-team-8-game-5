@@ -24,7 +24,7 @@ public class Interact : MonoBehaviour
     {
         /*If the player interacts with a gadget or terrarium, it will be
         added to the list and the button will be displayed*/
-        if (collision.tag == "Bumper" || collision.transform.gameObject.layer == 8)
+        if (collision.tag == "Bumper")
         {
             gameObject.transform.parent.transform.GetChild(1).gameObject.SetActive(true);
             objectsInRange.Add(collision.gameObject);
@@ -34,7 +34,7 @@ public class Interact : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //Removes the terrarium or gadgets from the list.
-        if (collision.tag == "Bumper" || collision.transform.gameObject.layer == 8)
+        if (collision.tag == "Bumper")
         {
             objectsInRange.Remove(collision.gameObject);
         }
