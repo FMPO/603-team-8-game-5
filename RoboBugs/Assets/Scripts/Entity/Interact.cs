@@ -59,11 +59,6 @@ public class Interact : MonoBehaviour
                     {
                         Destroy(objectsInRange[i]);
                     }
-                    //Current test for the terrarium, does nothing for now/
-                    /*else if (objectsInRange[i].layer == 8)
-                    {
-
-                    }*/
                     //Otherwise, we increment the index.
                     else
                     {
