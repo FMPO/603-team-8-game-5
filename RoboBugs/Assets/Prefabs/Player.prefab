@@ -635,6 +635,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bab56be2-2459-4033-b46b-2a1430e24326
     m_ActionName: Gameplay/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2629907978513609020}
+        m_TargetAssemblyTypeName: LaunchGadget, Assembly-CSharp
+        m_MethodName: ButtonSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8e8286a2-ce27-4575-8b70-fb8078c8b5e4
+    m_ActionName: Gameplay/select1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2629907978513609020}
+        m_TargetAssemblyTypeName: LaunchGadget, Assembly-CSharp
+        m_MethodName: ButtonSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ec860f51-6e1d-4106-bada-672a5c453d5e
+    m_ActionName: Gameplay/select2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2629907978513609020}
+        m_TargetAssemblyTypeName: LaunchGadget, Assembly-CSharp
+        m_MethodName: ButtonSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 124059a9-d882-441a-ad01-778af2fc8ab8
+    m_ActionName: Gameplay/select3[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Gameplay

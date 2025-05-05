@@ -161,4 +161,29 @@ public class LaunchGadget : MonoBehaviour
         }
     }
 
+    //Changes the current equipped gadget when called. 
+    public void ButtonSelect(InputAction.CallbackContext context)
+    {
+        //If the game is paused, return.
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
+        switch (context.action.name)
+        {
+            case "select1":
+                gadgetIndex = 0;
+                break;
+            case "select2":
+                gadgetIndex = 1;
+                break;
+            case "select3":
+                gadgetIndex = 2;
+                break;
+            default:
+                break;
+        }
+    }
+
 }
