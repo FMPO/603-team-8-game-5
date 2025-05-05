@@ -7241,6 +7241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1732501460}
     m_Modifications:
+    - target: {fileID: 2199505076734086988, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
+      propertyPath: loadSceneBuildIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2368916992345766006, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.7797365
@@ -7299,7 +7303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3901085550024604217, guid: 2b64bfc22ffc09442b42401b1a0b5d4b, type: 3}
       propertyPath: m_Offset.x
-      value: 15.18
+      value: -300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
