@@ -66,18 +66,22 @@ public class DataTracker : MonoBehaviour {
 
 		// Read old accumulated values from the file
 		using (StreamReader sr = new StreamReader(filePath)) {
-			// Read the current line
-			string[ ] line = sr.ReadLine( ).Split("");
+			string readLine = sr.ReadLine( );
+			// Make sure there is a line to read
+			if (readLine != null) {
+				// Read the current line
+				string[ ] tokens = readLine.Split(" ");
 
-			// Read values from the file
-			// A > indicates a loadout, and an = indicates a character playtime
-			if (line[0] == ">") {
-				readLoadoutValues.Add(line[1], float.Parse(line[2].Replace("s", "")));
-			} else if (line[0] == "=") {
-				if (line[1] == "Atlas") {
-					readAtlasTime = float.Parse(line[2].Replace("s", ""));
-				} else if (line[1] == "Prometheus") {
-					readPrometheusTime = float.Parse(line[2].Replace("s", ""));
+				// Read values from the file
+				// A > indicates a loadout, and an = indicates a character playtime
+				if (tokens[0] == ">") {
+					readLoadoutValues.Add(tokens[1], float.Parse(tokens[2].Replace("s", "")));
+				} else if (tokens[0] == "=") {
+					if (tokens[1] == "Atlas") {
+						readAtlasTime = float.Parse(tokens[2].Replace("s", ""));
+					} else if (tokens[1] == "Prometheus") {
+						readPrometheusTime = float.Parse(tokens[2].Replace("s", ""));
+					}
 				}
 			}
 		}

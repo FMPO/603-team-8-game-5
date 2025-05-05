@@ -108,7 +108,8 @@ public class TerrariumMenuManager : MonoBehaviour {
 		// If the player has reached the quota, unlock the door
 		bool hasCompletedQuota = (totalBugs >= quota);
 		doorUnlockedText.gameObject.SetActive(hasCompletedQuota);
-		doorObject.SetActive(!hasCompletedQuota);
+		doorObject.GetComponent<BoxCollider>( ).enabled = !hasCompletedQuota;
+		doorObject.GetComponent<SpriteRenderer>( ).enabled = !hasCompletedQuota;
 
 		// Update the player HUD
 		// Not the cleanest code but it'll do
