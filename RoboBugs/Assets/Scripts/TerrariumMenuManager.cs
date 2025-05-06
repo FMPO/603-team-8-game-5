@@ -131,5 +131,18 @@ public class TerrariumMenuManager : MonoBehaviour {
 		FindObjectOfType<DataTracker>( ).UpdateCurrentLoadoutString( );
 
 		/// TODO: Update other effects here (like adjusting character abilities)
+		/// 
+	}
+
+	public GameObject DoorObject
+	{
+		get
+		{
+			return doorObject;
+		}
+		set
+		{
+			doorObject = value;
+		}
 	}
 }

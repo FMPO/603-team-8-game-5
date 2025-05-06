@@ -99,9 +99,11 @@ public class Player : MonoBehaviour
     }
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         inputs = inputHandler.keyBindings;
-
+        GameMenuManager.Instance.terrarium = GameObject.Find("Terrarium").GetComponent<Terrarium>();
+        GameMenuManager.Instance.terrarium.terrariumMenuManager.DoorObject = GameObject.Find("Door");
+        GameMenuManager.Instance.transform.GetChild(0).gameObject.SetActive(true);
     }
     // Start is called before the first frame update
     void Start()
@@ -1563,7 +1565,7 @@ public class Player : MonoBehaviour
 
             foreach (KeyValuePair<string, GameObject> entity in entities)
             {
-                DontDestroyOnLoad(entity.Value);
+                //DontDestroyOnLoad(entity.Value);
             }
 
 
@@ -1603,6 +1605,7 @@ public class Player : MonoBehaviour
     public void UpdateBugInventories()
     {
         TerrariumMenuManager tempTMM = GameMenuManager.Instance.terrarium.terrariumMenuManager;
+
         for(int i = 0; i < tempTMM.AtlasUpgradeSlots.Count; i++)
         {
             if (tempTMM.AtlasUpgradeSlots[i].HasBug)

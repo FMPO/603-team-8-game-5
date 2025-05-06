@@ -81,6 +81,15 @@ public class GameMenuManager : Singleton<GameMenuManager> {
 	/// </summary>
 	/// <param name="buildIndex">The build index of the scene to go to</param>
 	public void GoToScene (int buildIndex) {
+		if (buildIndex == 0)
+		{
+
+            GameMenuState = GameMenuState.PLAY;
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+
+
+        }
 		SceneManager.LoadScene(buildIndex);
 	}
 
