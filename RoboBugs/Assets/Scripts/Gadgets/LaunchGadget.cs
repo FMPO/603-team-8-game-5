@@ -169,7 +169,6 @@ public class LaunchGadget : MonoBehaviour
         {
             return;
         }
-
         switch (context.action.name)
         {
             case "select1":

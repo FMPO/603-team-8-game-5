@@ -21,7 +21,7 @@ public class TerrariumMenuManager : MonoBehaviour {
 	[SerializeField] private StorageSlot _toStorageSlot;
 	[SerializeField] private bool _isHoldingBug;
 	[Space]
-	[SerializeField, Range(0, 50)] private int quota;
+	[SerializeField, Range(0, 60)] public int quota;
 	[SerializeField] private int tempCount = 0;
 
 	/// <summary>

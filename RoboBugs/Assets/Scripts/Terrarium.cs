@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Terrarium : MonoBehaviour {
 	[SerializeField] public TerrariumMenuManager terrariumMenuManager;
@@ -20,7 +21,7 @@ public class Terrarium : MonoBehaviour {
 	}
 
 	private void OnValidate ( ) {
-		terrariumMenuManager = FindObjectOfType<TerrariumMenuManager>( );
+		terrariumMenuManager = FindObjectOfType<TerrariumMenuManager>();
 	}
 
 	private void Awake ( ) {
@@ -42,15 +43,17 @@ public class Terrarium : MonoBehaviour {
 		if (collision.CompareTag("Bug")) {
 			// Get a reference to the bug component
 			BugMovement bugRef = collision.GetComponent<BugMovement>( );
-
+			
 			// Only add the bug to the storage if it is stunned
 			if (bugRef.BugState == BugState.STUNNED) {
-				// Add the bug to the terrarium storage
-				terrariumMenuManager.AddBugToStorage(bugRef.BugType);
-
-				// Destroy the bug
-				Destroy(collision.gameObject);
-			}
+                
+                // Add the bug to the terrarium storage
+                terrariumMenuManager.AddBugToStorage(bugRef.BugType);
+                
+                // Destroy the bug
+                Destroy(collision.gameObject);
+                
+            }
 		}
 	}
 

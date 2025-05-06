@@ -6934,7 +6934,7 @@ PrefabInstance:
       objectReference: {fileID: 1001620107}
     - target: {fileID: 7068617340865617136, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: quota
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7068617340865617136, guid: 70d793e62df74984e8e8cdc039daf3b1, type: 3}
       propertyPath: doorObject
