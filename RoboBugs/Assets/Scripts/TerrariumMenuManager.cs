@@ -22,6 +22,7 @@ public class TerrariumMenuManager : MonoBehaviour {
 	[SerializeField] private bool _isHoldingBug;
 	[Space]
 	[SerializeField, Range(0, 50)] private int quota;
+	[SerializeField] private int tempCount = 0;
 
 	/// <summary>
 	/// Whether or not the player is currently holding a bug
@@ -104,6 +105,7 @@ public class TerrariumMenuManager : MonoBehaviour {
 
 		// Set the quota text
 		quotaText.text = $"Bug Goal: {totalBugs} / {quota}";
+		tempCount = totalBugs;
 
 		// If the player has reached the quota, unlock the door
 		bool hasCompletedQuota = (totalBugs >= quota);
@@ -144,5 +146,18 @@ public class TerrariumMenuManager : MonoBehaviour {
 		{
 			doorObject = value;
 		}
+	}
+
+	public int Quota
+	{
+		get 
+		{ 
+			return quota; 
+		}
+		set 
+		{ 
+			quota = value;
+            quotaText.text = $"Bug Goal: {tempCount} / {quota}";
+        }
 	}
 }

@@ -1,9 +1,9 @@
 Amount of time each bug loadout was used:
-> EEE-EEE 13.3s
+> EEE-EEE 6.3s
 E - Empty, R - Red Bug, Y - Yellow Bug, B - Blue Bug
 Formatted as AAA-PPP, where A is Atlas's bugs and P is Prometheus' bugs
 
 Amount of time each character was used:
-= Prometheus 13.3s (100.24%)
-= Atlas 0.0s (-0.24%)
+= Prometheus 6.3s (100.18%)
+= Atlas 0.0s (-0.18%)
 

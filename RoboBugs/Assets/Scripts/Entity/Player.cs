@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
         GameMenuManager.Instance.terrarium = GameObject.Find("Terrarium").GetComponent<Terrarium>();
         GameMenuManager.Instance.terrarium.terrariumMenuManager.DoorObject = GameObject.Find("Door");
         GameMenuManager.Instance.transform.GetChild(0).gameObject.SetActive(true);
+        GameMenuManager.Instance.terrarium.terrariumMenuManager.Quota += 20;
     }
     // Start is called before the first frame update
     void Start()
